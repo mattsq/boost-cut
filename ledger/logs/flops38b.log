@@ -1,0 +1,7 @@
+$ python analysis/flops.py --data-dir /data/data --preset 38m --methods backprop,boost,cut,dust
+{"backprop": {"flops_per_token": 264247296.0, "vocab_evals_per_token": 4096}}
+{"boost": {"flops_per_token": 28989468672.0, "vocab_evals_per_token": 50397184}}
+{"cut": {"flops_per_token": 38759747584.0, "vocab_evals_per_token": 21123072}}
+{"dust": {"flops_per_token": 876178675712.0}}
+{"preset": "38m", "params": 37749776, "backprop": {"flops_per_token": 264247296.0, "vocab_evals_per_token": 4096}, "boost": {"flops_per_token": 28989468672.0, "vocab_evals_per_token": 50397184, "x_backprop": 109.7}, "cut": {"flops_per_token": 38759747584.0, "vocab_evals_per_token": 21123072, "x_backprop": 146.7}, "dust": {"flops_per_token": 876178675712.0, "x_backprop": 3315.8}}
+[modal_app] exit 0 after 26s

@@ -1,0 +1,62 @@
+{
+  "script": "/home/ubuntu/noise-scaling/src/train/val/run.py",
+  "world": 8,
+  "batch": 8,
+  "steps": 610,
+  "seed": 0,
+  "recipe": {
+    "writers": [
+      256,
+      256,
+      256,
+      256,
+      256,
+      256,
+      256,
+      256
+    ],
+    "hidden": [
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512
+    ],
+    "hubs": [
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512
+    ],
+    "embedding": 2048,
+    "local": {
+      "q": 384,
+      "v": 384,
+      "gate": 128,
+      "k": 1664,
+      "ve": 4608
+    },
+    "nrep": 16,
+    "lr": 0.003,
+    "betas": [
+      0.7,
+      0.95
+    ],
+    "warmdown": 0.3,
+    "gamma": 0.98,
+    "first_gamma": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25,
+    "memory_beta": 0.9,
+    "mesa_ridge": 0.1,
+    "alpha_beta": 0.8
+  },
+  "torch_version": "2.10.0+cu128"
+}

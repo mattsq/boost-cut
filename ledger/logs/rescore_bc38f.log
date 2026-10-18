@@ -1,0 +1,3 @@
+$ python utils/eval.py --data-dir /data/data /data/runs/bc38f_s0/final.pt
+{"checkpoint": "/data/runs/bc38f_s0/final.pt", "val_loss": 3.944811870070065}
+[modal_app] exit 0 after 16s

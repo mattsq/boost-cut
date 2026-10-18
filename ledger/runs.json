@@ -1,0 +1,5207 @@
+{
+ "bc38f_s0": {
+  "name": "bc38f_s0",
+  "table": "main",
+  "label": "Boost \u2192 Cut (all keys exact)",
+  "modal_app_id": "ap-6F1S8ipsXyCKu6ZNhJIykB",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-6F1S8ipsXyCKu6ZNhJIykB",
+  "start_pdt": "2026-10-17T17:02:21-07:00",
+  "end_pdt": "2026-10-17T17:13:13-07:00",
+  "billed_h100_usd": 5.1965,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.3,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 3.9448118209838867,
+   "train_seconds": 456.38,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 3.9369555957177105
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38f_s0 --preset 38m --seed 0 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38f_s0",
+   "sha256": {
+    "final.pt": "499dff9fb4d3fcb4fcc5b6c5475ecf5443295462f572c04ed4312605c5bcbcea",
+    "config.json": "f61562f45d854530a3b5de3190aaca755607755170f91cd868705c61c546ddca",
+    "result.json": "dc131dd1f8bfbff75b1f2373f3be1a84e5c833740f6e984a2ded901d4f8720e4",
+    "metrics.jsonl": "29448c502026548555c42fdf49896c332466a301bcd64a9a35f2f8c9b1077c0d"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38f_s0 --preset 38m --seed 0 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.9448118209838867,
+    "test": 3.9369555957177105,
+    "train_seconds": 456.38
+   },
+   "rescored": {
+    "val": 3.944811870070065,
+    "test": 3.936955592211555
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.944811870070065
+  },
+  "code": {
+   "level": "reconstructed",
+   "script": "train/boostcut/run.py",
+   "sha256": "6e02c1f075ca04f24196cba14ca0c1c2b0312a556381c8ccec6e71317ba9ac23",
+   "how": "byte-identical to submission/val_run_boostcut.py, copied and hashed at 17:16 with the file unchanged since 16:29:52; the next edit (17:41:48) only added --lr-mult, default 1.0"
+  }
+ },
+ "bc38f_s1": {
+  "name": "bc38f_s1",
+  "table": "main",
+  "label": "Boost \u2192 Cut (all keys exact)",
+  "modal_app_id": "ap-T7i90bEtzTqKCG31TEGvuT",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-T7i90bEtzTqKCG31TEGvuT",
+  "start_pdt": "2026-10-17T17:13:48-07:00",
+  "end_pdt": "2026-10-17T17:24:15-07:00",
+  "billed_h100_usd": 5.7231,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 1,
+   "switch": 0.3,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 3.9335331741501305,
+   "train_seconds": 455.53,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 3.9225571558755985
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38f_s1 --preset 38m --seed 1 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38f_s1",
+   "sha256": {
+    "final.pt": "c8349a1748dc414df70ddf0ad801a5c0c071dddb2a105751b2b758a781dbd8e6",
+    "config.json": "2eb21439bf87b0482e02d7b76ba76f5b99b101d5efb465390b2562580053bf12",
+    "result.json": "cc3590f49c8fc3ae4a1010133fe159bc334c734423a6959257d54b97c474989e",
+    "metrics.jsonl": "cf28143819495de3d86272195ce8d9930196365991cebbf683bba3c897ffd07a"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38f_s1 --preset 38m --seed 1 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.9335331741501305,
+    "test": 3.9225571558755985,
+    "train_seconds": 455.53
+   },
+   "rescored": {
+    "val": 3.9335331986932194,
+    "test": 3.9225571225671207
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.9335331986932194
+  },
+  "code": {
+   "level": "reconstructed",
+   "script": "train/boostcut/run.py",
+   "sha256": "6e02c1f075ca04f24196cba14ca0c1c2b0312a556381c8ccec6e71317ba9ac23",
+   "how": "byte-identical to submission/val_run_boostcut.py, copied and hashed at 17:16 with the file unchanged since 16:29:52; the next edit (17:41:48) only added --lr-mult, default 1.0"
+  }
+ },
+ "bc38f_s2": {
+  "name": "bc38f_s2",
+  "table": "main",
+  "label": "Boost \u2192 Cut (all keys exact)",
+  "modal_app_id": "ap-2vvCQNOAfn9JmBOqoTEysO",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-2vvCQNOAfn9JmBOqoTEysO",
+  "start_pdt": "2026-10-17T17:24:15-07:00",
+  "end_pdt": "2026-10-17T17:34:59-07:00",
+  "billed_h100_usd": 5.6529,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 2,
+   "switch": 0.3,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 3.9595461715670193,
+   "train_seconds": 400.89,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 3.9468798917882584
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38f_s2 --preset 38m --seed 2 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38f_s2",
+   "sha256": {
+    "final.pt": "57d77be55652878671c30a2fea50254e56bc035bcfd2a29114dc4f6059ed3f30",
+    "config.json": "93970501b6f70e117bdac8c740fe7d97b49648141ca102adb991ef3af786a255",
+    "result.json": "0e516ff2de3b9a502608ae534c1ca341ed827314b95cb6462a0f507440e68e7f",
+    "metrics.jsonl": "f13244b45d17b749c820d81947cce63fcc9f933c5603d0b0861a9a82b028fcad"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38f_s2 --preset 38m --seed 2 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.9595461715670193,
+    "test": 3.9468798917882584,
+    "train_seconds": 400.89
+   },
+   "rescored": {
+    "val": 3.9595461943570305,
+    "test": 3.946879877763636
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.9595461943570305
+  },
+  "code": {
+   "level": "reconstructed",
+   "script": "train/boostcut/run.py",
+   "sha256": "6e02c1f075ca04f24196cba14ca0c1c2b0312a556381c8ccec6e71317ba9ac23",
+   "how": "byte-identical to submission/val_run_boostcut.py, copied and hashed at 17:16 with the file unchanged since 16:29:52; the next edit (17:41:48) only added --lr-mult, default 1.0"
+  }
+ },
+ "bc38_s0": {
+  "name": "bc38_s0",
+  "table": "main",
+  "label": "Boost \u2192 Cut, Boost keys sampled (the ablations' base)",
+  "modal_app_id": "ap-yXL2kdmvFXs8rgkYJyur9u",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-yXL2kdmvFXs8rgkYJyur9u",
+  "start_pdt": "2026-10-17T12:47:25-07:00",
+  "end_pdt": "2026-10-17T12:59:53-07:00",
+  "billed_h100_usd": 5.2487,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.3,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": false,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 3.954576776308172,
+   "train_seconds": 453.62,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 3.94431153290412
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_s0 --preset 38m --seed 0 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38_s0",
+   "sha256": {
+    "final.pt": "31188b6a5f9ee9b891a9faf12f18c5855816397526cf18b9d94121306e9e797b",
+    "config.json": "0b6f5e46f7f418f4af85145c723fb7709caed7ba6c6777f127b023f725b35762",
+    "result.json": "c0e608ada8ee1ebd97e2599e535c964dca786ec0fafa3f13992a50285cc98116",
+    "metrics.jsonl": "5a87ce127e30a4e3f2b7440b4bc6da37ddad5fadfe5bfb9d06e7551abba5c4ef"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_s0 --preset 38m --seed 0 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.954576776308172,
+    "test": 3.94431153290412,
+    "train_seconds": 453.62
+   },
+   "rescored": {
+    "val": 3.954576786826639,
+    "test": 3.944311492583331
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.954576786826639
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "bc38_s1": {
+  "name": "bc38_s1",
+  "table": "main",
+  "label": "Boost \u2192 Cut, Boost keys sampled (the ablations' base)",
+  "modal_app_id": "ap-yyGMaxPGhRUOYmjS5tPYW0",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-yyGMaxPGhRUOYmjS5tPYW0",
+  "start_pdt": "2026-10-17T14:22:38-07:00",
+  "end_pdt": "2026-10-17T14:32:39-07:00",
+  "billed_h100_usd": 5.6002,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 1,
+   "switch": 0.3,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": false,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 3.953855738920324,
+   "train_seconds": 394.47,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 3.9417207363773796
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_s1 --preset 38m --seed 1 --save-every 488 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38_s1",
+   "sha256": {
+    "final.pt": "27049a71c4ba63048aa400542f22a0e8e344058e43d37a3b362f797b7829fdea",
+    "config.json": "d169d469d6e02d15f91ebabc1c3f6b32f192f95fa6592c44fa6ed4c6c670e0a2",
+    "result.json": "ed6df34ab112408da572cb30a624596359b31ffb742c12868e32402e6d5c0567",
+    "metrics.jsonl": "59a4088f58320790730c110bdd5b87a709da7e5f99f025893c3efc02c3769bc5"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_s1 --preset 38m --seed 1 --save-every 488 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.953855738920324,
+    "test": 3.9417207363773796,
+    "train_seconds": 394.47
+   },
+   "rescored": {
+    "val": 3.9538557950188133,
+    "test": 3.941720731118146
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.9538557950188133
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "bc38_s2": {
+  "name": "bc38_s2",
+  "table": "main",
+  "label": "Boost \u2192 Cut, Boost keys sampled (the ablations' base)",
+  "modal_app_id": "ap-Ovf3a5ViCjw6mfxAeXlEgx",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-Ovf3a5ViCjw6mfxAeXlEgx",
+  "start_pdt": "2026-10-17T14:32:39-07:00",
+  "end_pdt": "2026-10-17T14:48:53-07:00",
+  "billed_h100_usd": 5.1087,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 2,
+   "switch": 0.3,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": false,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 3.9600929284796997,
+   "train_seconds": 452.71,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 3.9479611814022064
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_s2 --preset 38m --seed 2 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38_s2",
+   "sha256": {
+    "final.pt": "d52ebd7f79c75aae1cc30306ba300f6251d3d6ff0d8d823a95d2fafc0446c466",
+    "config.json": "ce09cc27b56ac5c736fbf16193c8efab2490a45cc951d4d927dc9fc076eec009",
+    "result.json": "a2ec94842b15eebfba76c26872dd5acb3580c55b7cbbbdc0db25b5949fca93ed",
+    "metrics.jsonl": "a444efff9261b116c08c18d852ed4b903825200551445616113d74d1768d5a67"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_s2 --preset 38m --seed 2 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.9600929284796997,
+    "test": 3.9479611814022064,
+    "train_seconds": 452.71
+   },
+   "rescored": {
+    "val": 3.960092958282022,
+    "test": 3.9479611901675953
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.960092958282022
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "bp38_s0": {
+  "name": "bp38_s0",
+  "table": "main",
+  "label": "backprop (same optimizer)",
+  "modal_app_id": "ap-IwNL03Rin9dfl7TJJmBYYj",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-IwNL03Rin9dfl7TJJmBYYj",
+  "start_pdt": "2026-10-17T14:12:28-07:00",
+  "end_pdt": "2026-10-17T14:15:10-07:00",
+  "billed_h100_usd": 0.5969,
+  "config": {
+   "method": "backprop",
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "batch": 8,
+   "steps": 610,
+   "world": 8,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "polar_margin": 1.1
+  },
+  "result": {
+   "val_loss": 3.7083495978046868,
+   "train_seconds": 31.63,
+   "steps": 610,
+   "test_loss": 3.701422221520368
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp38_s0 --preset 38m --seed 0 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bp38_s0",
+   "sha256": {
+    "final.pt": "a448c407ec4cec32b6e807d18da324b780db1b73d8cd8afc19e3f2bf1fee77b9",
+    "config.json": "31da03d67ac73789f41d984b83b3690afdbfa1392af3ea803988886b5dfdb5da",
+    "result.json": "b26ead546e04c5a4b01c58c5c437c4cab166bd62769c94ce568ea3e53401aac0",
+    "metrics.jsonl": "7bd8758c76e7883b2337420f31a54282151209967873b82838d6ea89d6f794db"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp38_s0 --preset 38m --seed 0 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.7083495978046868,
+    "test": 3.701422221520368,
+    "train_seconds": 31.63
+   },
+   "rescored": {
+    "val": 3.7083495995577644,
+    "test": 3.701422228532679
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.7083495995577644
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "bp38_s1": {
+  "name": "bp38_s1",
+  "table": "main",
+  "label": "backprop (same optimizer)",
+  "modal_app_id": "ap-KrcdUYdDGzOi577oy8HRrP",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-KrcdUYdDGzOi577oy8HRrP",
+  "start_pdt": "2026-10-17T14:15:48-07:00",
+  "end_pdt": "2026-10-17T14:18:08-07:00",
+  "billed_h100_usd": 0.6671,
+  "config": {
+   "method": "backprop",
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 1,
+   "batch": 8,
+   "steps": 610,
+   "world": 8,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "polar_margin": 1.1
+  },
+  "result": {
+   "val_loss": 3.722524344921112,
+   "train_seconds": 32.85,
+   "steps": 610,
+   "test_loss": 3.7160806603291454
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp38_s1 --preset 38m --seed 1 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bp38_s1",
+   "sha256": {
+    "final.pt": "4beb39bb440eab38259dff17833d8ce84659e3135a1433f378d6c2e4ea01741f",
+    "config.json": "378f43d2378dd30232747c7780ba91e73f4b07b0acf180759a56df5e9edd1674",
+    "result.json": "88f9d2bacace18209370dfe5023786ea880abe0acec10f575d5c95fd832aab3e",
+    "metrics.jsonl": "36274a972ea66f3f8a3365b9f317b0993cf724fcf478475ecbfc19545b987c86"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp38_s1 --preset 38m --seed 1 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.722524344921112,
+    "test": 3.7160806603291454,
+    "train_seconds": 32.85
+   },
+   "rescored": {
+    "val": 3.72252436245189,
+    "test": 3.7160806866253124
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.72252436245189
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "bp38_s2": {
+  "name": "bp38_s2",
+  "table": "main",
+  "label": "backprop (same optimizer)",
+  "modal_app_id": "ap-gHWRfRk929xtSaVC6ucftU",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-gHWRfRk929xtSaVC6ucftU",
+  "start_pdt": "2026-10-17T14:18:08-07:00",
+  "end_pdt": "2026-10-17T14:22:38-07:00",
+  "billed_h100_usd": 0.5969,
+  "config": {
+   "method": "backprop",
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 2,
+   "batch": 8,
+   "steps": 610,
+   "world": 8,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "polar_margin": 1.1
+  },
+  "result": {
+   "val_loss": 3.7062490354566013,
+   "train_seconds": 29.64,
+   "steps": 610,
+   "test_loss": 3.6991514405783485
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp38_s2 --preset 38m --seed 2 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bp38_s2",
+   "sha256": {
+    "final.pt": "bd93ff683012591a9bbb6e3a01438a68e1d34d15ee50949f57d1e464b0d96ee3",
+    "config.json": "2d4ad1315791fc22c2a831996cf776044633b3004e82b6c9af512223e30d6242",
+    "result.json": "eab17200b25304cb933d116979dda7c820d015301f59ce12e7f1d3dcc152af0e",
+    "metrics.jsonl": "3368c853a7d00a534247f020e0e0d6e0860910b011f261679125811ba1c5fcf8"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp38_s2 --preset 38m --seed 2 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.7062490354566013,
+    "test": 3.6991514405783485,
+    "train_seconds": 29.64
+   },
+   "rescored": {
+    "val": 3.706249054740457,
+    "test": 3.699151410776026
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.706249054740457
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "dust38_s0": {
+  "name": "dust38_s0",
+  "table": "main",
+  "label": "Dust record (16k)",
+  "modal_app_id": "ap-B2fa28YS6Ak4cQt5KlxIVb",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-B2fa28YS6Ak4cQt5KlxIVb",
+  "start_pdt": "2026-10-17T19:55:13-07:00",
+  "end_pdt": "2026-10-17T21:09:07-07:00",
+  "billed_h100_usd": 33.9349,
+  "config": {
+   "method": "dust_record",
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "batch": 8,
+   "steps": 610,
+   "world": 8,
+   "recipe": {
+    "writers": [
+     256,
+     256,
+     256,
+     256,
+     256,
+     256,
+     256,
+     256
+    ],
+    "hidden": [
+     512,
+     512,
+     512,
+     512,
+     512,
+     512,
+     512,
+     512
+    ],
+    "hubs": [
+     512,
+     512,
+     512,
+     512,
+     512,
+     512,
+     512,
+     512
+    ],
+    "embedding": 2048,
+    "local": {
+     "q": 384,
+     "v": 384,
+     "gate": 128,
+     "k": 1664,
+     "ve": 4608
+    },
+    "nrep": 16,
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "gamma": 0.98,
+    "first_gamma": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25,
+    "memory_beta": 0.9,
+    "mesa_ridge": 0.1,
+    "alpha_beta": 0.8
+   }
+  },
+  "result": {
+   "val_loss": 3.9919833838939667,
+   "train_seconds": 4292.06,
+   "steps": 610,
+   "test_loss": 3.9819553704822765
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/dust_preset.py --data-dir /data/data --output /data/runs/dust38_s0 --preset 38m --seed 0 --eval-every 61 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "ab0a9f6639a0c2f7597e04649cd728c92587fffc2d681d1678d45955395717c4",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T02:55:38+00:00",
+   "end_utc": "2026-10-18T04:08:52+00:00",
+   "exit_code": 0
+  },
+  "code": {
+   "level": "snapshot",
+   "where": "provenance/dust38_s0/code.tar.gz (sha256 manifest in job.json)"
+  }
+ },
+ "dust38_s1": {
+  "name": "dust38_s1",
+  "table": "main",
+  "label": "Dust record (16k)",
+  "modal_app_id": null,
+  "modal_app_url": null,
+  "code": {
+   "level": "unknown"
+  }
+ },
+ "dust38_s2": {
+  "name": "dust38_s2",
+  "table": "main",
+  "label": "Dust record (16k)",
+  "modal_app_id": null,
+  "modal_app_url": null,
+  "code": {
+   "level": "unknown"
+  }
+ },
+ "bc38_fg128": {
+  "name": "bc38_fg128",
+  "table": "main",
+  "label": "local losses + forward gradient (128 directions)",
+  "modal_app_id": "ap-fPBsQyNv2R1hcbnP3TyOov",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-fPBsQyNv2R1hcbnP3TyOov",
+  "start_pdt": "2026-10-17T16:29:20-07:00",
+  "end_pdt": "2026-10-17T16:40:38-07:00",
+  "billed_h100_usd": 6.0392,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 1.0,
+   "boost_steps": 1220,
+   "cut_steps": 0,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 128,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": false,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 4.30463118763531,
+   "train_seconds": 474.13,
+   "boost_steps": 1220,
+   "cut_steps": 0,
+   "tokens": 9994240,
+   "test_loss": 4.292377713848563
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_fg128 --preset 38m --switch 1.0 --boost-probes 128 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38_fg128",
+   "sha256": {
+    "final.pt": "b0680c7f1ef2dbf1aa477448c6efdf5d9aa09f19812e81e692dd71ed9384fa44",
+    "config.json": "e4c89c3f553e3324b1cd7089d6261c244207adcc1ad7be0e8f8f0da7f65d8e05",
+    "result.json": "4523e155a908bebfb67d24cfe99c18c77c6637f7f072430bbcecf3af1b79880a",
+    "metrics.jsonl": "4969d9c75de695680f485fb66870668ae5f952f789057cec9b9fafa8a2582713"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_fg128 --preset 38m --switch 1.0 --boost-probes 128 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 4.30463118763531,
+    "test": 4.292377713848563,
+    "train_seconds": 474.13
+   },
+   "rescored": {
+    "val": 4.304631247239954,
+    "test": 4.292377752416274
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 4.304631247239954
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "bp38_curve": {
+  "name": "bp38_curve",
+  "table": "curve",
+  "label": "backprop, seed 0 with validation curve",
+  "modal_app_id": "ap-wu8StAQE2WRh253SSOepj7",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-wu8StAQE2WRh253SSOepj7",
+  "start_pdt": "2026-10-17T18:50:12-07:00",
+  "end_pdt": "2026-10-17T18:52:00-07:00",
+  "billed_h100_usd": 0.632,
+  "config": {
+   "method": "backprop",
+   "arch": "noise",
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "batch": 8,
+   "steps": 610,
+   "world": 8,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "polar_margin": 1.1
+  },
+  "result": {
+   "val_loss": 3.7084562480449677,
+   "train_seconds": 29.83,
+   "steps": 610,
+   "test_loss": 3.7013357632300434
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp38_curve --preset 38m --seed 0 --eval-every 488 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "ab0a9f6639a0c2f7597e04649cd728c92587fffc2d681d1678d45955395717c4",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T01:50:49+00:00",
+   "end_utc": "2026-10-18T01:51:58+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "bp38_curve",
+   "sha256": {
+    "final.pt": "3a7bc036a73ee1d906434af17bed37f03312d343c47a1ef3081bbc1a3806efc8",
+    "config.json": "e14e0a4037c74852c5bf627546cb0428c63fba47ebff651198c49599b34761a7",
+    "result.json": "a6c4885f781e35d5c8f32e735c6d839ab6ce331e2b19389a94fcf6dd4cdc9134",
+    "metrics.jsonl": "ac79c26ebac0d6380c168b6c215f24a80c8cf847d5f679b8b21f4d9ea3134de2"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp38_curve --preset 38m --seed 0 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.7084562480449677,
+    "test": 3.7013357632300434,
+    "train_seconds": 29.83
+   },
+   "rescored": {
+    "val": 3.7084562638226677,
+    "test": 3.701335766736199
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.7084562638226677
+  },
+  "code": {
+   "level": "snapshot",
+   "where": "provenance/bp38_curve/code.tar.gz (sha256 manifest in job.json)"
+  }
+ },
+ "bc38_dfa": {
+  "name": "bc38_dfa",
+  "table": "main",
+  "label": "direct feedback alignment",
+  "modal_app_id": "ap-NQZZtFqkjW94g0cQEd8lJC",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-NQZZtFqkjW94g0cQEd8lJC",
+  "start_pdt": "2026-10-17T17:35:30-07:00",
+  "end_pdt": "2026-10-17T17:40:49-07:00",
+  "billed_h100_usd": 1.9838,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.0,
+   "boost_steps": 0,
+   "cut_steps": 610,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 5.449488113908207,
+   "train_seconds": 150.78,
+   "boost_steps": 0,
+   "cut_steps": 610,
+   "tokens": 9994240,
+   "test_loss": 5.438713848590851
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_dfa --preset 38m --switch 0 --estimator dfa --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38_dfa",
+   "sha256": {
+    "final.pt": "1798c4cdefb8a0d989302b2e0693af5ea2dd8a18aafe114cbd11431ca352425a",
+    "config.json": "8a6cd1d8ff8442381756d829a56ab2a872fa1f71f27266b5d4376895244548fd",
+    "result.json": "54f13cd5706f8070b3fb0a747d69b3398b37af5e9329c474bc35a57841d5a1dd",
+    "metrics.jsonl": "b4cf5c88cca9d718648c670a74fe1b0972340cc770d9a2709a34471ed7f83362"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_dfa --preset 38m --switch 0 --estimator dfa --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 5.449488113908207,
+    "test": 5.438713848590851,
+    "train_seconds": 150.78
+   },
+   "rescored": {
+    "val": 5.449488219092874,
+    "test": 5.438713859109318
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 5.449488219092874
+  },
+  "code": {
+   "level": "reconstructed",
+   "script": "train/boostcut/run.py",
+   "sha256": "6e02c1f075ca04f24196cba14ca0c1c2b0312a556381c8ccec6e71317ba9ac23",
+   "how": "byte-identical to submission/val_run_boostcut.py, copied and hashed at 17:16 with the file unchanged since 16:29:52; the next edit (17:41:48) only added --lr-mult, default 1.0"
+  }
+ },
+ "bc38_dfa_lr0.3": {
+  "name": "bc38_dfa_lr0.3",
+  "table": "main",
+  "label": "direct feedback alignment, learning rates x0.3",
+  "modal_app_id": "ap-UCriZlG5GITlO7ZwDrsaBi",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-UCriZlG5GITlO7ZwDrsaBi",
+  "start_pdt": "2026-10-17T18:52:00-07:00",
+  "end_pdt": "2026-10-17T18:56:19-07:00",
+  "billed_h100_usd": 1.9553,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.0,
+   "boost_steps": 0,
+   "cut_steps": 610,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.0009,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.0069,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 5.280555090483497,
+   "train_seconds": 139.83,
+   "boost_steps": 0,
+   "cut_steps": 610,
+   "tokens": 9994240,
+   "test_loss": 5.264363194213194
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_dfa_lr0.3 --preset 38m --switch 0 --estimator dfa --lr-mult 0.3 --eval-every 488 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "ab0a9f6639a0c2f7597e04649cd728c92587fffc2d681d1678d45955395717c4",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T01:52:39+00:00",
+   "end_utc": "2026-10-18T01:56:13+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "bc38_dfa_lr0.3",
+   "sha256": {
+    "final.pt": "dab7e9cd9f4cee735f519d897ac8da1fd7ad69fcc1077ea06b9049835efdb582",
+    "config.json": "b86578a44f305c79038b712b18bea8dd3ba31f3bd8a9f748970be791d29a4097",
+    "result.json": "9538fce0b4bd4792ba36800c566d57efdb1b1a38dc9da7e7b8d0d3ff7cf3999c",
+    "metrics.jsonl": "468a55f473b5447cb99af3ced9253d4812109899d0ded4495cef52586da66a82"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_dfa_lr0.3 --preset 38m --switch 0 --estimator dfa --lr-mult 0.3 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 5.280555090483497,
+    "test": 5.264363194213194,
+    "train_seconds": 139.83
+   },
+   "rescored": {
+    "val": 5.280555079965031,
+    "test": 5.26436326083015
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 5.280555079965031
+  },
+  "code": {
+   "level": "snapshot",
+   "where": "provenance/bc38_dfa_lr0.3/code.tar.gz (sha256 manifest in job.json)"
+  }
+ },
+ "bc38_dfa_lr0.1": {
+  "name": "bc38_dfa_lr0.1",
+  "table": "main",
+  "label": "direct feedback alignment, learning rates x0.1",
+  "modal_app_id": "ap-MW3K8i12eYKJrfEUfyBQ7J",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-MW3K8i12eYKJrfEUfyBQ7J",
+  "start_pdt": "2026-10-17T18:56:19-07:00",
+  "end_pdt": "2026-10-17T19:00:42-07:00",
+  "billed_h100_usd": 2.9669,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.0,
+   "boost_steps": 0,
+   "cut_steps": 610,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.00030000000000000003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.0023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 5.264914719497456,
+   "train_seconds": 139.27,
+   "boost_steps": 0,
+   "cut_steps": 610,
+   "tokens": 9994240,
+   "test_loss": 5.252868592739105
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_dfa_lr0.1 --preset 38m --switch 0 --estimator dfa --lr-mult 0.1 --eval-every 488 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "ab0a9f6639a0c2f7597e04649cd728c92587fffc2d681d1678d45955395717c4",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T01:56:56+00:00",
+   "end_utc": "2026-10-18T02:00:27+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "bc38_dfa_lr0.1",
+   "sha256": {
+    "final.pt": "c4faf8a63fd51124fcf6fd622034976ac8b4a21f47a090e7fa2e517a23730ec8",
+    "config.json": "aac53f9d900d427821ca52fcac30a52c2bc15a6232306eb7cfe5ef8c6326751c",
+    "result.json": "4a8999842fa6e6870370a99503949386b1681d9a24412931aae3cef0ea8de2dd",
+    "metrics.jsonl": "9aaad2aefaa283a403906ddff5a816ef31b3c474851d96b11b1cbec04ca5f310"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_dfa_lr0.1 --preset 38m --switch 0 --estimator dfa --lr-mult 0.1 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 5.264914719497456,
+    "test": 5.252868592739105,
+    "train_seconds": 139.27
+   },
+   "rescored": {
+    "val": 5.264914666905122,
+    "test": 5.252868582220638
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 5.264914666905122
+  },
+  "code": {
+   "level": "snapshot",
+   "where": "provenance/bc38_dfa_lr0.1/code.tar.gz (sha256 manifest in job.json)"
+  }
+ },
+ "bc38_dfa_lr0.03": {
+  "name": "bc38_dfa_lr0.03",
+  "table": "main",
+  "label": "direct feedback alignment, learning rates x0.03",
+  "modal_app_id": "ap-cbjhdvRkxpcY3WzeMI40eP",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-cbjhdvRkxpcY3WzeMI40eP",
+  "start_pdt": "2026-10-17T19:00:42-07:00",
+  "end_pdt": "2026-10-17T19:07:27-07:00",
+  "billed_h100_usd": 2.0828,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.0,
+   "boost_steps": 0,
+   "cut_steps": 610,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 8.999999999999999e-05,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.00069,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 6.269185970811283,
+   "train_seconds": 155.19,
+   "boost_steps": 0,
+   "cut_steps": 610,
+   "tokens": 9994240,
+   "test_loss": 6.261762976646423
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_dfa_lr0.03 --preset 38m --switch 0 --estimator dfa --lr-mult 0.03 --eval-every 488 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "ab0a9f6639a0c2f7597e04649cd728c92587fffc2d681d1678d45955395717c4",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T02:03:33+00:00",
+   "end_utc": "2026-10-18T02:07:20+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "bc38_dfa_lr0.03",
+   "sha256": {
+    "final.pt": "03a0f3cfc047cd191829b96fa1fe7e132153ac20aa9a23369543676167763a2b",
+    "config.json": "a0b933ba2ad479eee90cdd62259aed8ccdf4c16f5179ad5c29c4ce24bd732c0a",
+    "result.json": "5f6d7631ff120b429657bdc4279af176f0f5f9b26ec3a148b13a14fe59862d22",
+    "metrics.jsonl": "d32eb7f3bad4f0a9986862aad0e22ba86e7c592f5aa53e694e19d7bfee296cff"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_dfa_lr0.03 --preset 38m --switch 0 --estimator dfa --lr-mult 0.03 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 6.269185970811283,
+    "test": 6.261762976646423,
+    "train_seconds": 155.19
+   },
+   "rescored": {
+    "val": 6.269185949774349,
+    "test": 6.2617629275602456
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 6.269185949774349
+  },
+  "code": {
+   "level": "snapshot",
+   "where": "provenance/bc38_dfa_lr0.03/code.tar.gz (sha256 manifest in job.json)"
+  }
+ },
+ "bc38_fg128_lr0.5": {
+  "name": "bc38_fg128_lr0.5",
+  "table": "main",
+  "label": "local losses + forward gradient, learning rates x0.5",
+  "modal_app_id": "ap-Iqd5GdtdvQTpXHCs0Zjxce",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-Iqd5GdtdvQTpXHCs0Zjxce",
+  "start_pdt": "2026-10-17T19:07:27-07:00",
+  "end_pdt": "2026-10-17T19:15:34-07:00",
+  "billed_h100_usd": 4.3011,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 1.0,
+   "boost_steps": 1220,
+   "cut_steps": 0,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.0015,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.0115,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 128,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": false,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 4.36916199501823,
+   "train_seconds": 287.21,
+   "boost_steps": 1220,
+   "cut_steps": 0,
+   "tokens": 9994240,
+   "test_loss": 4.354912165333243
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_fg128_lr0.5 --preset 38m --switch 1.0 --boost-probes 128 --boost-keys sampled --lr-mult 0.5 --eval-every 488 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "ab0a9f6639a0c2f7597e04649cd728c92587fffc2d681d1678d45955395717c4",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T02:08:29+00:00",
+   "end_utc": "2026-10-18T02:15:23+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "bc38_fg128_lr0.5",
+   "sha256": {
+    "final.pt": "2a21d378a3f55c3a7872a960542c57ee002ff7ef846ccdc80c1d78534105a448",
+    "config.json": "723330d0315c0e5ec9de3c1b0fa833c753625e6174481cc959f3985dac568a1e",
+    "result.json": "ab9b6ce74b5ddc4526c618e25343c7b51cab5d5184ae7a7382ce9b7faf9504ef",
+    "metrics.jsonl": "232d93a384267126eda733c051cb6914602b22113c43e755658023b049dfe73a"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_fg128_lr0.5 --preset 38m --switch 1.0 --boost-probes 128 --boost-keys sampled --lr-mult 0.5 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 4.36916199501823,
+    "test": 4.354912165333243,
+    "train_seconds": 287.21
+   },
+   "rescored": {
+    "val": 4.369161956450519,
+    "test": 4.354912070667043
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 4.369161956450519
+  },
+  "code": {
+   "level": "snapshot",
+   "where": "provenance/bc38_fg128_lr0.5/code.tar.gz (sha256 manifest in job.json)"
+  }
+ },
+ "bc38f_lr0.5": {
+  "name": "bc38f_lr0.5",
+  "table": "ablation",
+  "label": "Boost \u2192 Cut, learning rates x0.5 (seed 0)",
+  "modal_app_id": "ap-IVFpmWzxmur34zWqAUXRAS",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-IVFpmWzxmur34zWqAUXRAS",
+  "start_pdt": "2026-10-17T19:15:34-07:00",
+  "end_pdt": "2026-10-17T19:27:30-07:00",
+  "billed_h100_usd": 5.2076,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.3,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.0015,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.0115,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 4.073933759156396,
+   "train_seconds": 456.38,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 4.064039908787784
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38f_lr0.5 --preset 38m --seed 0 --lr-mult 0.5 --eval-every 488 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "ab0a9f6639a0c2f7597e04649cd728c92587fffc2d681d1678d45955395717c4",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T02:17:40+00:00",
+   "end_utc": "2026-10-18T02:27:18+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "bc38f_lr0.5",
+   "sha256": {
+    "final.pt": "db04a5f4811d5516e14ba4c0477ae3e6731cd40daf3ac19c11fe02a2b74224b3",
+    "config.json": "8f9f6501561a5e747cd3c1018e39f73ce23b4cbb937b16998293a76c2d20f835",
+    "result.json": "50776d694d66dacec110bf27178b8a204732daaf94434e1c08e0dc7dc81aab2d",
+    "metrics.jsonl": "16d687ca9af2ddc7c73dc0aace49ca37c127c5829523da72f237f8e1e5db24ff"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38f_lr0.5 --preset 38m --seed 0 --lr-mult 0.5 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 4.073933759156396,
+    "test": 4.064039908787784,
+    "train_seconds": 456.38
+   },
+   "rescored": {
+    "val": 4.073933727600995,
+    "test": 4.06403990352855
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 4.073933727600995
+  },
+  "code": {
+   "level": "snapshot",
+   "where": "provenance/bc38f_lr0.5/code.tar.gz (sha256 manifest in job.json)"
+  }
+ },
+ "bc38f_lr2": {
+  "name": "bc38f_lr2",
+  "table": "ablation",
+  "label": "Boost \u2192 Cut, learning rates x2 (seed 0)",
+  "modal_app_id": "ap-bkGmNuucZf8hT0m7CVEDpX",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-bkGmNuucZf8hT0m7CVEDpX",
+  "start_pdt": "2026-10-17T19:27:30-07:00",
+  "end_pdt": "2026-10-17T19:38:28-07:00",
+  "billed_h100_usd": 5.214,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.3,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.006,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.046,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 3.976400950375725,
+   "train_seconds": 458.02,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 3.9671593115610233
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38f_lr2 --preset 38m --seed 0 --lr-mult 2 --eval-every 488 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "ab0a9f6639a0c2f7597e04649cd728c92587fffc2d681d1678d45955395717c4",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T02:28:34+00:00",
+   "end_utc": "2026-10-18T02:38:15+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "bc38f_lr2",
+   "sha256": {
+    "final.pt": "e0116f1081c900f4e1f325e28dc2030b119bf83a6338ef80f66d3792ca949ab8",
+    "config.json": "3d42422c7ef404692c1d01dcea7670fad2477e967f684a8ec280fe358ad54829",
+    "result.json": "ab43073778efbda20b9765ba9439f2e0f94084aed433b811adcaf7cc7e869050",
+    "metrics.jsonl": "a7bb42b6c67b7752d6e4cbd708654470959894bfc6c818b07e60d6f11347ca7a"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38f_lr2 --preset 38m --seed 0 --lr-mult 2 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.976400950375725,
+    "test": 3.9671593115610233,
+    "train_seconds": 458.02
+   },
+   "rescored": {
+    "val": 3.9764009644003475,
+    "test": 3.967159355387968
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.9764009644003475
+  },
+  "code": {
+   "level": "snapshot",
+   "where": "provenance/bc38f_lr2/code.tar.gz (sha256 manifest in job.json)"
+  }
+ },
+ "bc38_sw100": {
+  "name": "bc38_sw100",
+  "table": "ablation",
+  "label": "Boost alone (switch 100%, Boost keys sampled)",
+  "modal_app_id": "ap-zs3xAwsNz0Dcx9Kb4wbhKs",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-zs3xAwsNz0Dcx9Kb4wbhKs",
+  "start_pdt": "2026-10-17T15:01:18-07:00",
+  "end_pdt": "2026-10-17T15:09:55-07:00",
+  "billed_h100_usd": 4.2133,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 1.0,
+   "boost_steps": 1220,
+   "cut_steps": 0,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": false,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 4.122061178964727,
+   "train_seconds": 337.58,
+   "boost_steps": 1220,
+   "cut_steps": 0,
+   "tokens": 9994240,
+   "test_loss": 4.112816407400019
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_sw100 --preset 38m --switch 1.0 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38_sw100",
+   "sha256": {
+    "final.pt": "c4eaab3eb50076c7e761669572af3389143dc7b302167e444fb53872b7756aa4",
+    "config.json": "3097beb42f476eaa260a9caea03c5150a8d1303e1faf653e8c7a9cb3f15de294",
+    "result.json": "01519d03d82c112dbefdf7f94f78127446c38db472d0369a483380bfbe80d135",
+    "metrics.jsonl": "0148838a9e4cf53d7299c134b4fcea1fb5b1a6198146981e411159192e75fb2b"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_sw100 --preset 38m --switch 1.0 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 4.122061178964727,
+    "test": 4.112816407400019,
+    "train_seconds": 337.58
+   },
+   "rescored": {
+    "val": 4.122061315704794,
+    "test": 4.112816474016975
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 4.122061315704794
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "bc38_sw0": {
+  "name": "bc38_sw0",
+  "table": "ablation",
+  "label": "Cut alone (switch 0%)",
+  "modal_app_id": "ap-AQbXZC4yUc8d8ZcZl5YXw9",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-AQbXZC4yUc8d8ZcZl5YXw9",
+  "start_pdt": "2026-10-17T14:48:53-07:00",
+  "end_pdt": "2026-10-17T15:00:13-07:00",
+  "billed_h100_usd": 6.3376,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.0,
+   "boost_steps": 0,
+   "cut_steps": 610,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": false,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 3.991761326789856,
+   "train_seconds": 503.46,
+   "boost_steps": 0,
+   "cut_steps": 610,
+   "tokens": 9994240,
+   "test_loss": 3.978744152714224
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_sw0 --preset 38m --switch 0 --save-every 488 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38_sw0",
+   "sha256": {
+    "final.pt": "31281ef172a8d49383f934f2293d6ee4bb662e975948c4157c4e2e2fcdf2e3ee",
+    "config.json": "a9ccf0a264edcbc8973bde04e4c9d59354f97dcece0973516fda216c8e365199",
+    "result.json": "1dfa0501cf039a3a6472823b6bc4ebfa410d29c9cff6e5c504af2651048077e7",
+    "metrics.jsonl": "32cc4a63ccd9434bd43a8ea347a5d68a5fb2abb7bb73a3da3308c142b78cc120"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_sw0 --preset 38m --switch 0 --save-every 488 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.991761326789856,
+    "test": 3.978744152714224,
+    "train_seconds": 503.46
+   },
+   "rescored": {
+    "val": 3.9917612987406113,
+    "test": 3.9787441842696247
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.9917612987406113
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "bc38_sw0_s1": {
+  "name": "bc38_sw0_s1",
+  "table": "ablation",
+  "label": "Cut alone (switch 0%)",
+  "modal_app_id": "ap-88Bd6sb4yLq639QIerVQ8A",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-88Bd6sb4yLq639QIerVQ8A",
+  "start_pdt": "2026-10-17T17:46:44-07:00",
+  "end_pdt": "2026-10-17T17:57:31-07:00",
+  "billed_h100_usd": 6.162,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 1,
+   "switch": 0.0,
+   "boost_steps": 0,
+   "cut_steps": 610,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 4.005600645261652,
+   "train_seconds": 502.21,
+   "boost_steps": 0,
+   "cut_steps": 610,
+   "tokens": 9994240,
+   "test_loss": 3.9957885023425606
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_sw0_s1 --preset 38m --seed 1 --switch 0 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38_sw0_s1",
+   "sha256": {
+    "final.pt": "4d84c2ffb9745aae04e63c2f8ee3f9a06698a99b0836c68e696811da5dada1da",
+    "config.json": "df44a80c9532f5de7b1a361d7792ddaac335494569fa74ee85972b97d7698322",
+    "result.json": "536080b9bad88ccdcf4e5017fbdfb802315672bd1bcd1e6862230e05e221c12e",
+    "metrics.jsonl": "898a522e0ab350271615ba433cc8fe33e5e6cc94fafbc3fabdd1173dff263054"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_sw0_s1 --preset 38m --seed 1 --switch 0 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 4.005600645261652,
+    "test": 3.9957885023425606,
+    "train_seconds": 502.21
+   },
+   "rescored": {
+    "val": 4.005600620718563,
+    "test": 3.995788483058705
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 4.005600620718563
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "bc38_sw0_s2": {
+  "name": "bc38_sw0_s2",
+  "table": "ablation",
+  "label": "Cut alone (switch 0%)",
+  "modal_app_id": "ap-8f9Akh6U3jeC2QnMLUyxyd",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-8f9Akh6U3jeC2QnMLUyxyd",
+  "start_pdt": "2026-10-17T17:59:00-07:00",
+  "end_pdt": "2026-10-17T18:10:08-07:00",
+  "billed_h100_usd": 5.5476,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 2,
+   "switch": 0.0,
+   "boost_steps": 0,
+   "cut_steps": 610,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 3.988646552843206,
+   "train_seconds": 504.21,
+   "boost_steps": 0,
+   "cut_steps": 610,
+   "tokens": 9994240,
+   "test_loss": 3.9780248210710636
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_sw0_s2 --preset 38m --seed 2 --switch 0 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38_sw0_s2",
+   "sha256": {
+    "final.pt": "b1890a083692baa023ed8e792f44b711a1afbb99789fa3f8966eeba7aa1e0a95",
+    "config.json": "83602eba40aa919ab96c788ba26620e6f7090706269eb1a06cf09ade3ea64d31",
+    "result.json": "d7e63bf054a52477614d5cf8960baa6b59f4d99afe5f3654462b137a138fa95e",
+    "metrics.jsonl": "c838d0fd43e7011946bbdcccd37d09e759b956a4a5ec07f3ca4476e85e4d8cbd"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_sw0_s2 --preset 38m --seed 2 --switch 0 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.988646552843206,
+    "test": 3.9780248210710636,
+    "train_seconds": 504.21
+   },
+   "rescored": {
+    "val": 3.988646521287806,
+    "test": 3.978024819317986
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.988646521287806
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "bc38f_sw100_s0": {
+  "name": "bc38f_sw100_s0",
+  "table": "ablation",
+  "label": "Boost alone (switch 100%, exact keys)",
+  "modal_app_id": "ap-jlBPVitmamRvRhQJqvuwpt",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-jlBPVitmamRvRhQJqvuwpt",
+  "start_pdt": "2026-10-17T18:10:08-07:00",
+  "end_pdt": "2026-10-17T18:18:37-07:00",
+  "billed_h100_usd": 4.1433,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 1.0,
+   "boost_steps": 1220,
+   "cut_steps": 0,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 4.074191335369559,
+   "train_seconds": 344.65,
+   "boost_steps": 1220,
+   "cut_steps": 0,
+   "tokens": 9994240,
+   "test_loss": 4.0642670217682335
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38f_sw100_s0 --preset 38m --seed 0 --switch 1.0 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38f_sw100_s0",
+   "sha256": {
+    "final.pt": "ae6e01770c8c412954ee1cd2dcfe068754bc136a8becfca680557dea8455731f",
+    "config.json": "85f8de5541348650750e287096ee631b621892f7f98a80a187eb8529f7e9b31f",
+    "result.json": "9063e1c309460a554176eaf2cc5a55669e99422f549593d3bbd4f0a53ede91c2",
+    "metrics.jsonl": "773bdb5cf61f0ec06c7678ddc0fbd2e49108140f27e5984f720df5f329905999"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38f_sw100_s0 --preset 38m --seed 0 --switch 1.0 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 4.074191335369559,
+    "test": 4.0642670217682335,
+    "train_seconds": 344.65
+   },
+   "rescored": {
+    "val": 4.074191359912648,
+    "test": 4.0642670322867005
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 4.074191359912648
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "bc38f_sw100_s1": {
+  "name": "bc38f_sw100_s1",
+  "table": "ablation",
+  "label": "Boost alone (switch 100%, exact keys)",
+  "modal_app_id": "ap-3mPSwzlQQKgoloCAWXQq6i",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-3mPSwzlQQKgoloCAWXQq6i",
+  "start_pdt": "2026-10-17T18:21:24-07:00",
+  "end_pdt": "2026-10-17T18:33:26-07:00",
+  "billed_h100_usd": 4.2309,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 1,
+   "switch": 1.0,
+   "boost_steps": 1220,
+   "cut_steps": 0,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 4.06528859278735,
+   "train_seconds": 338.83,
+   "boost_steps": 1220,
+   "cut_steps": 0,
+   "tokens": 9994240,
+   "test_loss": 4.054634653470096
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38f_sw100_s1 --preset 38m --seed 1 --switch 1.0 --eval-every 488 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "ab0a9f6639a0c2f7597e04649cd728c92587fffc2d681d1678d45955395717c4",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T01:25:23+00:00",
+   "end_utc": "2026-10-18T01:33:08+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "bc38f_sw100_s1",
+   "sha256": {
+    "final.pt": "b7cd2180bc51ccfb54084d0a8a73042afc1acc78023407027af0fec48f12fa52",
+    "config.json": "a91889fe29bb790fa005996e2c16edf9c94d04fdd9c0e80521453025a49a80e1",
+    "result.json": "c36ec257dcfdbff154e2c8a70fd70b7af1034e3d870dcc8e0ac1a0006ecc0c50",
+    "metrics.jsonl": "c6173facc44423abc546819a08154d3119b7995621d47bf81f3b4a2c0bd7a34f"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38f_sw100_s1 --preset 38m --seed 1 --switch 1.0 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 4.06528859278735,
+    "test": 4.054634653470096,
+    "train_seconds": 338.83
+   },
+   "rescored": {
+    "val": 4.065288508639616,
+    "test": 4.0546346131493065
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 4.065288508639616
+  },
+  "code": {
+   "level": "snapshot",
+   "where": "provenance/bc38f_sw100_s1/code.tar.gz (sha256 manifest in job.json)"
+  }
+ },
+ "bc38f_sw100_s2": {
+  "name": "bc38f_sw100_s2",
+  "table": "ablation",
+  "label": "Boost alone (switch 100%, exact keys)",
+  "modal_app_id": "ap-7KVNk4l39tKeJZJXtvdxAY",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-7KVNk4l39tKeJZJXtvdxAY",
+  "start_pdt": "2026-10-17T18:33:26-07:00",
+  "end_pdt": "2026-10-17T18:42:09-07:00",
+  "billed_h100_usd": 4.9156,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 2,
+   "switch": 1.0,
+   "boost_steps": 1220,
+   "cut_steps": 0,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 4.077353126862469,
+   "train_seconds": 341.9,
+   "boost_steps": 1220,
+   "cut_steps": 0,
+   "tokens": 9994240,
+   "test_loss": 4.067388197954963
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38f_sw100_s2 --preset 38m --seed 2 --switch 1.0 --eval-every 488 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "ab0a9f6639a0c2f7597e04649cd728c92587fffc2d681d1678d45955395717c4",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T01:34:05+00:00",
+   "end_utc": "2026-10-18T01:41:52+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "bc38f_sw100_s2",
+   "sha256": {
+    "final.pt": "66f0f60c9fdff3d464f9213453f7cd200f0620dbce80be276a39c0c36938154c",
+    "config.json": "70d1008ba3a79341df13d205b53e3edf2e25cd517c57e8c1c6463d937f1b18d3",
+    "result.json": "bae9db4fea6e51b45c25c6f850259647d0da2ce7d952107bc47659a76fa32981",
+    "metrics.jsonl": "5252d2cc3610d3227605d2a6b89200dd4ae7c7537e0ef5d42328175f07ee944f"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38f_sw100_s2 --preset 38m --seed 2 --switch 1.0 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 4.077353126862469,
+    "test": 4.067388197954963,
+    "train_seconds": 341.9
+   },
+   "rescored": {
+    "val": 4.0773532110102035,
+    "test": 4.067388211979585
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 4.0773532110102035
+  },
+  "code": {
+   "level": "snapshot",
+   "where": "provenance/bc38f_sw100_s2/code.tar.gz (sha256 manifest in job.json)"
+  }
+ },
+ "bp38_lr0.5": {
+  "name": "bp38_lr0.5",
+  "table": "main",
+  "label": "backprop, learning rates x0.5",
+  "modal_app_id": "ap-9bfjfojgOrCGZ4iY7EBaal",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-9bfjfojgOrCGZ4iY7EBaal",
+  "start_pdt": "2026-10-17T18:42:09-07:00",
+  "end_pdt": "2026-10-17T18:45:00-07:00",
+  "billed_h100_usd": 1.2991,
+  "config": {
+   "method": "backprop",
+   "arch": "noise",
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "batch": 8,
+   "steps": 610,
+   "world": 8,
+   "recipe": {
+    "lr": 0.0015,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.0115,
+    "anvil_wd": 2.25
+   },
+   "polar_margin": 1.1
+  },
+  "result": {
+   "val_loss": 3.7709142811158123,
+   "train_seconds": 33.07,
+   "steps": 610,
+   "test_loss": 3.7641938433927646
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp38_lr0.5 --preset 38m --seed 0 --lr-mult 0.5 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "ab0a9f6639a0c2f7597e04649cd728c92587fffc2d681d1678d45955395717c4",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T01:43:38+00:00",
+   "end_utc": "2026-10-18T01:44:47+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "bp38_lr0.5",
+   "sha256": {
+    "final.pt": "0c93af59d079f95be88529e2f98827028b190c9abf36c059b6bac46260e6611b",
+    "config.json": "105af864adacc6376f8aa9642c13e6c763d73bb1a6027f8203dff703f1d75d77",
+    "result.json": "0f0276ffdfb748c2e616c88ccfc153328f7e75ff6e5cd2774a34eaaf0bf6bee8",
+    "metrics.jsonl": "9a3e9c57429cac1ce1a05fc8da2b129c84aff4a305827048ef26249f69b5bf17"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp38_lr0.5 --preset 38m --seed 0 --lr-mult 0.5 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.7709142811158123,
+    "test": 3.7641938433927646,
+    "train_seconds": 33.07
+   },
+   "rescored": {
+    "val": 3.770914253066568,
+    "test": 3.7641938854666317
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.770914253066568
+  },
+  "code": {
+   "level": "snapshot",
+   "where": "provenance/bp38_lr0.5/code.tar.gz (sha256 manifest in job.json)"
+  }
+ },
+ "bp38_lr2": {
+  "name": "bp38_lr2",
+  "table": "main",
+  "label": "backprop, learning rates x2",
+  "modal_app_id": "ap-RsGsmJIpaLaR0h4PzrKhlV",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-RsGsmJIpaLaR0h4PzrKhlV",
+  "start_pdt": "2026-10-17T18:45:00-07:00",
+  "end_pdt": "2026-10-17T18:47:38-07:00",
+  "billed_h100_usd": 0.6262,
+  "config": {
+   "method": "backprop",
+   "arch": "noise",
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "batch": 8,
+   "steps": 610,
+   "world": 8,
+   "recipe": {
+    "lr": 0.006,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.046,
+    "anvil_wd": 2.25
+   },
+   "polar_margin": 1.1
+  },
+  "result": {
+   "val_loss": 3.730379383353626,
+   "train_seconds": 26.69,
+   "steps": 610,
+   "test_loss": 3.7252768050221836
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp38_lr2 --preset 38m --seed 0 --lr-mult 2 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "ab0a9f6639a0c2f7597e04649cd728c92587fffc2d681d1678d45955395717c4",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T01:46:30+00:00",
+   "end_utc": "2026-10-18T01:47:32+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "bp38_lr2",
+   "sha256": {
+    "final.pt": "373c584dd86d5e6a91d1384c6c9ec51ca6f74a80295a267d443bcfa176091648",
+    "config.json": "eb6cc70e9cb902859701897c7f151d412319ae614002d8c8491486c07d88ed4a",
+    "result.json": "dfba524c31c0c1e26ac6f6e14aa25eb1ac8de86f1b7127a9a2443b25da9c85ca",
+    "metrics.jsonl": "79f28971e977bef5129cd681a13e30099e00993f0eb5ec65cea61ad57dc6b901"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp38_lr2 --preset 38m --seed 0 --lr-mult 2 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.730379383353626,
+    "test": 3.7252768050221836,
+    "train_seconds": 26.69
+   },
+   "rescored": {
+    "val": 3.7303793710820816,
+    "test": 3.725276792750639
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.7303793710820816
+  },
+  "code": {
+   "level": "snapshot",
+   "where": "provenance/bp38_lr2/code.tar.gz (sha256 manifest in job.json)"
+  }
+ },
+ "bp38_lr4": {
+  "name": "bp38_lr4",
+  "table": "main",
+  "label": "backprop, learning rates x4",
+  "modal_app_id": "ap-4qjwywFA942NJpyDr4eO2k",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-4qjwywFA942NJpyDr4eO2k",
+  "start_pdt": "2026-10-17T18:47:38-07:00",
+  "end_pdt": "2026-10-17T18:50:12-07:00",
+  "billed_h100_usd": 1.0007,
+  "config": {
+   "method": "backprop",
+   "arch": "noise",
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "batch": 8,
+   "steps": 610,
+   "world": 8,
+   "recipe": {
+    "lr": 0.012,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.092,
+    "anvil_wd": 2.25
+   },
+   "polar_margin": 1.1
+  },
+  "result": {
+   "val_loss": 3.8665416959454033,
+   "train_seconds": 52.28,
+   "steps": 610,
+   "test_loss": 3.8599962206447826
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp38_lr4 --preset 38m --seed 0 --lr-mult 4 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "ab0a9f6639a0c2f7597e04649cd728c92587fffc2d681d1678d45955395717c4",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T01:48:20+00:00",
+   "end_utc": "2026-10-18T01:50:05+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "bp38_lr4",
+   "sha256": {
+    "final.pt": "6f85169dec899ddf043b2498a2b1991e5d9d77285fa67dd096468c505f3514b3",
+    "config.json": "a22461d5727c5d4e04d851668f4f367f31a3e230188e27720c211ddce0403d3f",
+    "result.json": "92c24c66515a91f8cae4b2e914cb2193e09b8ed0653138f7fb2a79d4f5e60e69",
+    "metrics.jsonl": "d3942d19facb4a7b189c76654c45be34a45f84989ef2e4666f521188925341e6"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp38_lr4 --preset 38m --seed 0 --lr-mult 4 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.8665416959454033,
+    "test": 3.8599962206447826,
+    "train_seconds": 52.28
+   },
+   "rescored": {
+    "val": 3.8665417152292587,
+    "test": 3.859996199607849
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.8665417152292587
+  },
+  "code": {
+   "level": "snapshot",
+   "where": "provenance/bp38_lr4/code.tar.gz (sha256 manifest in job.json)"
+  }
+ },
+ "bc38_sw50": {
+  "name": "bc38_sw50",
+  "table": "ablation",
+  "label": "switch 50%",
+  "modal_app_id": "ap-6HEe6Kf5qIJZBniDvlM3Yf",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-6HEe6Kf5qIJZBniDvlM3Yf",
+  "start_pdt": "2026-10-17T15:09:55-07:00",
+  "end_pdt": "2026-10-17T15:20:50-07:00",
+  "billed_h100_usd": 4.9543,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.5,
+   "boost_steps": 610,
+   "cut_steps": 305,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": false,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 3.989407272899852,
+   "train_seconds": 421.77,
+   "boost_steps": 610,
+   "cut_steps": 305,
+   "tokens": 9994240,
+   "test_loss": 3.97971809611601
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_sw50 --preset 38m --switch 0.5 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38_sw50",
+   "sha256": {
+    "final.pt": "9b5added8f95b869c759647721c905c8e51bef1edb592c8a35d11662d71d8f81",
+    "config.json": "59c06712472e3f45ae2f5ecc13c3fc448b3cfbccbd8e4cdc2330e0843dec5bd0",
+    "result.json": "9947c8d0fa14199ca4ec5397b8b58fea68e9551e782abd87fac6816f53fb99d0",
+    "metrics.jsonl": "d8e2c252cd171253acad9c00d99f7e4b50ee8f36a0acfe16bb1538c2dd0359c9"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_sw50 --preset 38m --switch 0.5 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.989407272899852,
+    "test": 3.97971809611601,
+    "train_seconds": 421.77
+   },
+   "rescored": {
+    "val": 3.9894072378382965,
+    "test": 3.979718054042143
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.9894072378382965
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "bc38_k64": {
+  "name": "bc38_k64",
+  "table": "ablation",
+  "label": "routes: top-64",
+  "modal_app_id": "ap-GpwiuigEB6o4QNQWRrVZW7",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-GpwiuigEB6o4QNQWRrVZW7",
+  "start_pdt": "2026-10-17T15:20:50-07:00",
+  "end_pdt": "2026-10-17T15:30:40-07:00",
+  "billed_h100_usd": 4.9682,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.3,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": false,
+    "chain_sigma": 0.01,
+    "route_k": 64,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 3.976126581430435,
+   "train_seconds": 434.15,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 3.9672349726452545
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_k64 --preset 38m --route-k 64 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38_k64",
+   "sha256": {
+    "final.pt": "3b592f6c53c4c1747e4808ba34f54314d2b635dda7982c7c15fcb1ce2f67da01",
+    "config.json": "e203746ecf3d19bf58b81c4ffc3318de97dd4fd5bb4ed65a07ffa3437f6c2578",
+    "result.json": "d7cd581d742d130291754d1222041064406e99618b37c488150e3219ed00fc92",
+    "metrics.jsonl": "de49dd7b933865a1a9f0d48e4485e4a352f839c832c6dfe55c752289753b762e"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_k64 --preset 38m --route-k 64 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.976126581430435,
+    "test": 3.9672349726452545,
+    "train_seconds": 434.15
+   },
+   "rescored": {
+    "val": 3.9761265305911793,
+    "test": 3.9672349410898544
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.9761265305911793
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "bc38_k256": {
+  "name": "bc38_k256",
+  "table": "ablation",
+  "label": "routes: top-256",
+  "modal_app_id": "ap-epH5UbJpwZqZSYrLQvxJIM",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-epH5UbJpwZqZSYrLQvxJIM",
+  "start_pdt": "2026-10-17T15:30:40-07:00",
+  "end_pdt": "2026-10-17T15:44:18-07:00",
+  "billed_h100_usd": 6.5131,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.3,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": false,
+    "chain_sigma": 0.01,
+    "route_k": 256,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 3.944751685156542,
+   "train_seconds": 488.52,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 3.935370899298612
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_k256 --preset 38m --route-k 256 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38_k256",
+   "sha256": {
+    "final.pt": "96e888a229c91d10bfefd31a34837e0cf03a398a4a2e36a93e562438d7fd6c27",
+    "config.json": "f4dd36ae2875e8204a30e556b429b961b5d3ca44a61a86aa49be5dd0e3ef4704",
+    "result.json": "617acf85a9ea79ec5c8e9231c35c52ccb4fb2f0811c41fbd75e8358b7def9940",
+    "metrics.jsonl": "2edf1355777259accd37ee0eb6b037f6eae912bdc88a6b6ec9d2fe4ad27f0062"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_k256 --preset 38m --route-k 256 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.944751685156542,
+    "test": 3.935370899298612,
+    "train_seconds": 488.52
+   },
+   "rescored": {
+    "val": 3.9447517044403972,
+    "test": 3.935370858977823
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.9447517044403972
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "bc38_kall": {
+  "name": "bc38_kall",
+  "table": "ablation",
+  "label": "routes: all 2,048",
+  "modal_app_id": "ap-GMS4pqk1dZ3O03jKi1U0MJ",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-GMS4pqk1dZ3O03jKi1U0MJ",
+  "start_pdt": "2026-10-17T15:44:18-07:00",
+  "end_pdt": "2026-10-17T16:06:12-07:00",
+  "billed_h100_usd": 10.2173,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.3,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": false,
+    "chain_sigma": 0.01,
+    "route_k": 2048,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 3.948262971990249,
+   "train_seconds": 1021.1,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 3.9386076629161835
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_kall --preset 38m --route-k 2048 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38_kall",
+   "sha256": {
+    "final.pt": "cb335d8ec1b2d91d134de38c9ad523e846e94379d062afb1b4fc837eec836d2d",
+    "config.json": "05625c84a100afb45f027e5940dd21e505733ad23a924374005698abc093c758",
+    "result.json": "4e6400a58011ef9ed950086dbee8671f65cb43c9fac3e998e9fd3c39144d6fa8",
+    "metrics.jsonl": "eb4b35c3c01b30ed77a259dfd9a38a849c31170ecc52fed8cbfd7be5e8f1ce2f"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_kall --preset 38m --route-k 2048 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.948262971990249,
+    "test": 3.9386076629161835,
+    "train_seconds": 1021.1
+   },
+   "rescored": {
+    "val": 3.9482629579656265,
+    "test": 3.938607699730817
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.9482629579656265
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "bc38_ksampled": {
+  "name": "bc38_ksampled",
+  "table": "ablation",
+  "label": "Cut keys sampled",
+  "modal_app_id": "ap-jfJL5MLj7gyQiwUwyT12qy",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-jfJL5MLj7gyQiwUwyT12qy",
+  "start_pdt": "2026-10-17T16:06:38-07:00",
+  "end_pdt": "2026-10-17T16:19:27-07:00",
+  "billed_h100_usd": 5.8875,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.3,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": false,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": false,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 3.9799748869503246,
+   "train_seconds": 464.44,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 3.969476545558256
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_ksampled --preset 38m --keys sampled --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38_ksampled",
+   "sha256": {
+    "final.pt": "ed88c7f979502b3bf7625a2bd9bbefe39b10ea63cb1280c5949b303791ed9bbc",
+    "config.json": "8e64e042695d482ac69e282b88259ba76d1e237eaf22d03ee20c2ceccce8555c",
+    "result.json": "4cbfd5146f15ff85b98c4f0ce5d081eb6b46d1643ea639fde7bf22f1a514b891",
+    "metrics.jsonl": "e75d4a09084f37372e858585f748588baadbfe879c1a582700d157381bd62688"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_ksampled --preset 38m --keys sampled --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.9799748869503246,
+    "test": 3.969476545558256,
+    "train_seconds": 464.44
+   },
+   "rescored": {
+    "val": 3.97997485890108,
+    "test": 3.969476615681368
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.97997485890108
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "bc38_bexact": {
+  "name": "bc38_bexact",
+  "table": "ablation",
+  "label": "Boost keys exact too (seed 0)",
+  "modal_app_id": "ap-seLYcHZgOo7Zayk6KmVsJI",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-seLYcHZgOo7Zayk6KmVsJI",
+  "start_pdt": "2026-10-17T16:19:27-07:00",
+  "end_pdt": "2026-10-17T16:29:20-07:00",
+  "billed_h100_usd": 4.6347,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.3,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 3.946591149358188,
+   "train_seconds": 394.31,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 3.9368988906635956
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_bexact --preset 38m --boost-keys exact --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc38_bexact",
+   "sha256": {
+    "final.pt": "5bc261f7ed0567403b5ef19c7675a6bbd331c82f93e7bbc8cc5169c694c39bed",
+    "config.json": "f61562f45d854530a3b5de3190aaca755607755170f91cd868705c61c546ddca",
+    "result.json": "295568380ef5a2793a76c0438aa380ec30a63d01a3ad67c78ac3febece08feb8",
+    "metrics.jsonl": "b0122624f8d22a85559a8fa126e0f297674207f4eb0487ee829b0bddc5d37421"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc38_bexact --preset 38m --boost-keys exact --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.946591149358188,
+    "test": 3.9368988906635956,
+    "train_seconds": 394.31
+   },
+   "rescored": {
+    "val": 3.9465911668889664,
+    "test": 3.936898911700529
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.9465911668889664
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "bc7_s0": {
+  "name": "bc7_s0",
+  "table": "scale",
+  "label": "7.3M Boost \u2192 Cut",
+  "modal_app_id": "ap-mcCRRVI5Ndg02cQEXb8Mpv",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-mcCRRVI5Ndg02cQEXb8Mpv",
+  "start_pdt": "2026-10-17T16:53:57-07:00",
+  "end_pdt": "2026-10-17T16:57:49-07:00",
+  "billed_h100_usd": 1.8609,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "7m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 4,
+    "n_head": 4,
+    "n_kv_head": 4,
+    "n_embd": 256,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.3,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 128,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 64,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 4.183438798960517,
+   "train_seconds": 114.65,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 4.174479004214792
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc7_s0 --preset 7m --seed 0 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc7_s0",
+   "sha256": {
+    "final.pt": "a8bb5d46a13bc6690b903c6f0a25d9ec7e7577edb587f61e72728a474f5e1f18",
+    "config.json": "442886a16e1605cf2987e853e0ab1037964b633f18b87e8ec134a644958a2e1a",
+    "result.json": "7dbfbd6969efed694f483e2302357d3a4d57e7ff1cf47e2bc3a83eb81b41ccc5",
+    "metrics.jsonl": "8892d41ad11dccc37fa42329b17ece34c47e132b981cc0ef66cc8076e9981607"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc7_s0 --preset 7m --seed 0 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 7340296,
+   "logged": {
+    "val": 4.183438798960517,
+    "test": 4.174479004214792,
+    "train_seconds": 114.65
+   },
+   "rescored": {
+    "val": 4.183438904145184,
+    "test": 4.17447902174557
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   }
+  },
+  "code": {
+   "level": "reconstructed",
+   "script": "train/boostcut/run.py",
+   "sha256": "6e02c1f075ca04f24196cba14ca0c1c2b0312a556381c8ccec6e71317ba9ac23",
+   "how": "byte-identical to submission/val_run_boostcut.py, copied and hashed at 17:16 with the file unchanged since 16:29:52; the next edit (17:41:48) only added --lr-mult, default 1.0"
+  }
+ },
+ "bp7_s0": {
+  "name": "bp7_s0",
+  "table": "scale",
+  "label": "7.3M backprop",
+  "modal_app_id": "ap-Wj9NUa05YtROm3ZQX0j6W4",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-Wj9NUa05YtROm3ZQX0j6W4",
+  "start_pdt": "2026-10-17T16:57:49-07:00",
+  "end_pdt": "2026-10-17T16:59:21-07:00",
+  "billed_h100_usd": 0.474,
+  "config": {
+   "method": "backprop",
+   "preset": "7m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 4,
+    "n_head": 4,
+    "n_kv_head": 4,
+    "n_embd": 256,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "batch": 8,
+   "steps": 610,
+   "world": 8,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "polar_margin": 1.1
+  },
+  "result": {
+   "val_loss": 3.918872833251953,
+   "train_seconds": 14.26,
+   "steps": 610,
+   "test_loss": 3.915028710575665
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp7_s0 --preset 7m --seed 0 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bp7_s0",
+   "sha256": {
+    "final.pt": "d7088c34c26cc433449d56ea628a4bc6c98f7cf226434d4f719bcb6f7120cbea",
+    "config.json": "28bd8ceb6146453ca04c99176672fd513d31031087f4ce623e17f5ec1a878b71",
+    "result.json": "90a9d4c189d909cf4950c8719dc86ceefe55603caaec92b1982f793ac65fce50",
+    "metrics.jsonl": "616072c21c7969039074e0bea926c6f0939d554ac9f24f9a2a69aa5be120fdae"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp7_s0 --preset 7m --seed 0 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 7340296,
+   "logged": {
+    "val": 3.918872833251953,
+    "test": 3.915028710575665,
+    "train_seconds": 14.26
+   },
+   "rescored": {
+    "val": 3.9188728192273308,
+    "test": 3.915028733365676
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   }
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "dust7_s0": {
+  "name": "dust7_s0",
+  "table": "scale",
+  "label": "7.3M Dust",
+  "modal_app_id": null,
+  "modal_app_url": null,
+  "code": {
+   "level": "unknown"
+  }
+ },
+ "bc243_s0": {
+  "name": "bc243_s0",
+  "table": "scale",
+  "label": "243M Boost \u2192 Cut (Boost keys sampled)",
+  "modal_app_id": "ap-93FMOR8JsAoxYFq6EqY4AT",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-93FMOR8JsAoxYFq6EqY4AT",
+  "start_pdt": "2026-10-17T13:11:59-07:00",
+  "end_pdt": "2026-10-17T14:12:03-07:00",
+  "billed_h100_usd": 31.0558,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "243m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 16,
+    "n_head": 16,
+    "n_kv_head": 16,
+    "n_embd": 1024,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.3,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "fc_k": 512,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": false,
+    "chain_sigma": 0.01,
+    "route_k": 256,
+    "chain_tokens": 128,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 4
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 3.897955992642571,
+   "train_seconds": 3208.94,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 3.8877410029663757
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc243_s0 --preset 243m --seed 0 --chain-tokens 128 --key-chunk 4 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bc243_s0",
+   "sha256": {
+    "final.pt": "555396c96845a96b1320c4a2c2d6d5aea0c6ae75d90afa249dd8002d17695424",
+    "config.json": "cfb125a68725fb8be4e1dde31abec83c96c4200bb45f9aca4865780f8bfb4c38",
+    "result.json": "70eaba12bb6db73774bc74414de4f835ea2f19a3c9a2d48586f22a4acfcd065e",
+    "metrics.jsonl": "941b0a46914ef6232d4bcd2b11da80f6691a46ef528ca51dd7dcc7c9ebfca748"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc243_s0 --preset 243m --seed 0 --chain-tokens 128 --key-chunk 4 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 243273760,
+   "logged": {
+    "val": 3.897955992642571,
+    "test": 3.8877410029663757,
+    "train_seconds": 3208.94
+   },
+   "rescored": {
+    "val": 3.897955964593326,
+    "test": 3.887741032768698
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   }
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "bc243f_s0": {
+  "name": "bc243f_s0",
+  "table": "scale",
+  "label": "243M Boost \u2192 Cut",
+  "modal_app_id": null,
+  "modal_app_url": null,
+  "code": {
+   "level": "unknown"
+  }
+ },
+ "bp243_s0": {
+  "name": "bp243_s0",
+  "table": "scale",
+  "label": "243M backprop",
+  "modal_app_id": "ap-EYf6taB1FuAheXMf6RS6y1",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-EYf6taB1FuAheXMf6RS6y1",
+  "start_pdt": "2026-10-17T16:59:21-07:00",
+  "end_pdt": "2026-10-17T17:02:21-07:00",
+  "billed_h100_usd": 1.1762,
+  "config": {
+   "method": "backprop",
+   "preset": "243m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 16,
+    "n_head": 16,
+    "n_kv_head": 16,
+    "n_embd": 1024,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "batch": 8,
+   "steps": 610,
+   "world": 8,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "polar_margin": 1.1
+  },
+  "result": {
+   "val_loss": 3.640215251375647,
+   "train_seconds": 67.37,
+   "steps": 610,
+   "test_loss": 3.63212510768105
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp243_s0 --preset 243m --seed 0 --eval-every 488 --test-file test.pt",
+  "rescore": {
+   "name": "bp243_s0",
+   "sha256": {
+    "final.pt": "74374428667926af57f3995681a3573d47353789594708f275b5c44d2b456856",
+    "config.json": "aa131ded6baad8590f86acc84c6ee976327c47cb93c5a19a2f577d4d307f33fe",
+    "result.json": "31d22e00ea4f35e190dd7a244684ba686758b3996526f61906fe503faf2143b0",
+    "metrics.jsonl": "1466fcad69e2a36e8db645f9fb500212d83690d0ae1b4e008814b91a9e46130e"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp243_s0 --preset 243m --seed 0 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 243273760,
+   "logged": {
+    "val": 3.640215251375647,
+    "test": 3.63212510768105,
+    "train_seconds": 67.37
+   },
+   "rescored": {
+    "val": 3.6402152285856357,
+    "test": 3.6321251041748943
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   }
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "dust38_p4k": {
+  "name": "dust38_p4k",
+  "table": "scale",
+  "label": "38M Dust, 4k population",
+  "modal_app_id": null,
+  "modal_app_url": null,
+  "code": {
+   "level": "unknown"
+  }
+ },
+ "dust243_p4k": {
+  "name": "dust243_p4k",
+  "table": "scale",
+  "label": "243M Dust, 4k population",
+  "modal_app_id": null,
+  "modal_app_url": null,
+  "code": {
+   "level": "unknown"
+  }
+ },
+ "plain_bc38_s0": {
+  "name": "plain_bc38_s0",
+  "table": "plain",
+  "label": "Boost \u2192 Cut",
+  "modal_app_id": "ap-On5xmdNCbOG6Myc22NQNrd",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-On5xmdNCbOG6Myc22NQNrd",
+  "start_pdt": "2026-10-17T19:38:28-07:00",
+  "end_pdt": "2026-10-17T19:49:13-07:00",
+  "billed_h100_usd": 5.8987,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "L"
+   },
+   "seed": 0,
+   "switch": 0.3,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128",
+   "arch": "plain",
+   "wrapper": "/root/noise/analysis/plain_gpt.py"
+  },
+  "result": {
+   "val_loss": 4.572784479926614,
+   "train_seconds": 475.02,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 4.5598141586079315
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/plain_gpt.py --data-dir /data/data --output /data/runs/plain_bc38_s0 --preset 38m --seed 0 --eval-every 488 --test-file test.pt --save-every 488",
+  "provenance": {
+   "code_sha256": "ab0a9f6639a0c2f7597e04649cd728c92587fffc2d681d1678d45955395717c4",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T02:39:08+00:00",
+   "end_utc": "2026-10-18T02:49:01+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "plain_bc38_s0",
+   "sha256": {
+    "final.pt": "937489783a93d15d3768a83d76b7c1adb03a79e77f113b0e33c0d18511405eb6",
+    "config.json": "823ecf8855c4ddce12053c1e2c3fb892c327565a171c76bd93874756cb9dd171",
+    "result.json": "42211c4595c3cece4fecd1e051c781105c98ef9e9ddcdea966233317cc5a1363",
+    "metrics.jsonl": "c85c9ce9bce2327a1c1653e182e2861689996c0f678a8c2ff863f1fad1e70188"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/plain_gpt.py --data-dir /data/data --output /data/runs/plain_bc38_s0 --preset 38m --seed 0 --eval-every 488 --test-file test.pt --save-every 488",
+   "arch": "plain",
+   "data_dir": "/data/data",
+   "params": 29360128,
+   "logged": {
+    "val": 4.572784479926614,
+    "test": 4.5598141586079315,
+    "train_seconds": 475.02
+   },
+   "rescored": {
+    "val": 4.572784465901992,
+    "test": 4.559814186657176
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   }
+  },
+  "code": {
+   "level": "snapshot",
+   "where": "provenance/plain_bc38_s0/code.tar.gz (sha256 manifest in job.json)"
+  }
+ },
+ "plain_bp38_s0": {
+  "name": "plain_bp38_s0",
+  "table": "plain",
+  "label": "backprop",
+  "modal_app_id": "ap-QnwxiWcgHewJIvjnBWVM4B",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-QnwxiWcgHewJIvjnBWVM4B",
+  "start_pdt": "2026-10-17T19:49:13-07:00",
+  "end_pdt": "2026-10-17T19:53:41-07:00",
+  "billed_h100_usd": 1.2991,
+  "config": {
+   "method": "backprop",
+   "arch": "plain",
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "L"
+   },
+   "seed": 0,
+   "batch": 8,
+   "steps": 610,
+   "world": 8,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "polar_margin": 1.1
+  },
+  "result": {
+   "val_loss": 3.916370858164395,
+   "train_seconds": 23.41,
+   "steps": 610,
+   "test_loss": 3.908545650103513
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/plain_bp38_s0 --preset 38m --seed 0 --arch plain --test-file test.pt",
+  "provenance": {
+   "code_sha256": "ab0a9f6639a0c2f7597e04649cd728c92587fffc2d681d1678d45955395717c4",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T02:52:33+00:00",
+   "end_utc": "2026-10-18T02:53:29+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "plain_bp38_s0",
+   "sha256": {
+    "final.pt": "6d1c5c0dba2444f250eb0331b78c53e43355ced868e216f7ef0bfa46f87a983c",
+    "config.json": "5c83a4fdadb035ff11ed7a0bf2d6ffdb299d7876d6454d4507a1766a9c3c9ceb",
+    "result.json": "fd4ee4903ee1d714f8528ee75adab6a9f0f2ac2d37f29c05cbc0c9e58bbb826d",
+    "metrics.jsonl": "0f03f4ed957600185b8b00f7d249012ee7223397365a7bc8d7f1e7d9350542ea"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/plain_bp38_s0 --preset 38m --seed 0 --arch plain --test-file test.pt",
+   "arch": "plain",
+   "data_dir": "/data/data",
+   "params": 29360128,
+   "logged": {
+    "val": 3.916370858164395,
+    "test": 3.908545650103513,
+    "train_seconds": 23.41
+   },
+   "rescored": {
+    "val": 3.916370847645928,
+    "test": 3.9085456483504353
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   }
+  },
+  "code": {
+   "level": "snapshot",
+   "where": "provenance/plain_bp38_s0/code.tar.gz (sha256 manifest in job.json)"
+  }
+ },
+ "plain_dust38_s0": {
+  "name": "plain_dust38_s0",
+  "table": "plain",
+  "label": "Dust record",
+  "modal_app_id": null,
+  "modal_app_url": null,
+  "code": {
+   "level": "unknown"
+  }
+ },
+ "plain_bc38_kall": {
+  "name": "plain_bc38_kall",
+  "table": "plain",
+  "label": "Boost \u2192 Cut, all 2,048 units",
+  "modal_app_id": null,
+  "modal_app_url": null,
+  "code": {
+   "level": "unknown"
+  }
+ },
+ "boost_official_s0": {
+  "name": "boost_official_s0",
+  "table": "speedrun",
+  "label": "Boost speedrun entry (official log)",
+  "modal_app_id": "ap-KyWLDZytsfwXX6MtqQfOsi",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-KyWLDZytsfwXX6MtqQfOsi",
+  "start_pdt": "2026-10-17T09:13:33-07:00",
+  "end_pdt": "2026-10-17T09:21:32-07:00",
+  "billed_h100_usd": 3.4155,
+  "config": {
+   "script": "/root/noise/train/sub_boost/run.py",
+   "world": 8,
+   "batch": 4,
+   "steps": 1220,
+   "seed": 0,
+   "target": 4.2,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728
+   },
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 4.123042467762442,
+   "train_seconds": 314.17,
+   "steps": 1220,
+   "tokens": 9994240,
+   "reached_target": true
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/sub_boost/run.py --data-dir /data/data --output /data/runs/boost_official_s0 --eval-every 122",
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "dust_speedrun_official": {
+  "name": "dust_speedrun_official",
+  "table": "speedrun",
+  "label": "Dust speedrun record, its official script, our hardware",
+  "modal_app_id": "ap-6oUBDwfSEHJfJWAUlWFxg5",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-6oUBDwfSEHJfJWAUlWFxg5",
+  "start_pdt": "2026-10-17T21:14:25-07:00",
+  "end_pdt": null,
+  "billed_h100_usd": 0.0,
+  "config": {
+   "script": "/root/noise/train/speedrun/run.py",
+   "world": 8,
+   "batch": 8,
+   "steps": 610,
+   "seed": 0,
+   "target": 4.2,
+   "recipe": {
+    "writers": [
+     64,
+     64,
+     64,
+     64,
+     64,
+     64,
+     64,
+     64
+    ],
+    "hidden": [
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128
+    ],
+    "hubs": [
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128
+    ],
+    "embedding": 640,
+    "local": {
+     "q": 128,
+     "v": 128,
+     "gate": 64,
+     "k": 512,
+     "ve": 1408
+    },
+    "nrep": 16,
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "gamma": 0.98,
+    "first_gamma": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25,
+    "memory_beta": 0.9,
+    "mesa_ridge": 0.1,
+    "alpha_beta": 0.8
+   },
+   "torch_version": "2.10.0+cu128"
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/speedrun/run.py --data-dir /data/data --output /data/runs/dust_speedrun_official",
+  "provenance": {
+   "code_sha256": "b4a45f2db0bd6e6f9bbe24233940afb38e23a3187cc6f747634f9d03be03d357",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T04:14:38+00:00",
+   "end_utc": null,
+   "exit_code": null
+  },
+  "code": {
+   "level": "snapshot",
+   "where": "provenance/dust_speedrun_official/code.tar.gz (sha256 manifest in job.json)"
+  }
+ },
+ "bcts_s0": {
+  "name": "bcts_s0",
+  "table": "tinystories",
+  "label": "Boost \u2192 Cut",
+  "modal_app_id": "ap-9vVVt3F2MaAlCzCDvv9oSg",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-9vVVt3F2MaAlCzCDvv9oSg",
+  "start_pdt": "2026-10-17T16:41:44-07:00",
+  "end_pdt": "2026-10-17T16:52:02-07:00",
+  "billed_h100_usd": 5.2316,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.3,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 256,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 128,
+    "chain_tokens": 64,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 8
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 1.6852299711283516,
+   "train_seconds": 467.82,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 1.6329763119711596
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bcts_s0 --preset 38m --seed 0 --eval-every 488 --test-file test.pt --data-dir /data/tinystories",
+  "rescore": {
+   "name": "bcts_s0",
+   "sha256": {
+    "final.pt": "05289b5cd21e0a61fd8c72a1d1ce4c284404a7826e21b0979ac88c0df790062e",
+    "config.json": "f61562f45d854530a3b5de3190aaca755607755170f91cd868705c61c546ddca",
+    "result.json": "71dd596c0db274cec0cacb891b311569c365b43a3dca2c18562f7cea92a9fa70",
+    "metrics.jsonl": "9def77ee9c45842eda6ac64e108a69dfea768bbb963ca870f179f1ef9ef556ce"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bcts_s0 --preset 38m --seed 0 --eval-every 488 --test-file test.pt --data-dir /data/tinystories",
+   "arch": "noise",
+   "data_dir": "/data/tinystories",
+   "params": 37749776,
+   "logged": {
+    "val": 1.6852299711283516,
+    "test": 1.6329763119711596,
+    "train_seconds": 467.82
+   },
+   "rescored": {
+    "val": 1.685229992165285,
+    "test": 1.6329763110946207
+   },
+   "split_token_sha256": {
+    "val": "027a8acc68f4ba540c8b958386fe09b986502bb5031accb797f616f158e864b1",
+    "test": "ce6fdc1b59c4b7f506fb29587fc0c807bae194fdd4d078f35d190fa47342ec4d"
+   }
+  },
+  "code": {
+   "level": "reconstructed",
+   "script": "train/boostcut/run.py",
+   "sha256": "6e02c1f075ca04f24196cba14ca0c1c2b0312a556381c8ccec6e71317ba9ac23",
+   "how": "byte-identical to submission/val_run_boostcut.py, copied and hashed at 17:16 with the file unchanged since 16:29:52; the next edit (17:41:48) only added --lr-mult, default 1.0"
+  }
+ },
+ "bpts_s0": {
+  "name": "bpts_s0",
+  "table": "tinystories",
+  "label": "backprop",
+  "modal_app_id": "ap-o8bN3tZ2q9LEJFY6QaBRBd",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-o8bN3tZ2q9LEJFY6QaBRBd",
+  "start_pdt": "2026-10-17T16:52:02-07:00",
+  "end_pdt": "2026-10-17T16:53:56-07:00",
+  "billed_h100_usd": 0.7724,
+  "config": {
+   "method": "backprop",
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "batch": 8,
+   "steps": 610,
+   "world": 8,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "polar_margin": 1.1
+  },
+  "result": {
+   "val_loss": 1.5579945024322062,
+   "train_seconds": 32.26,
+   "steps": 610,
+   "test_loss": 1.508110004312852
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bpts_s0 --preset 38m --seed 0 --eval-every 488 --test-file test.pt --data-dir /data/tinystories",
+  "rescore": {
+   "name": "bpts_s0",
+   "sha256": {
+    "final.pt": "2a130f3a0095cc1f82e8ee7d99f4daaa9a1b56a657ee943f2acf1b6bf00717df",
+    "config.json": "31da03d67ac73789f41d984b83b3690afdbfa1392af3ea803988886b5dfdb5da",
+    "result.json": "3157fe870ab4884cfad534e02ee9045625e255ef730ad9f16124f950fced0449",
+    "metrics.jsonl": "970ed55c743c852f66dc1cf663e350c04f827cc99c7ef4dcc7f9915c8ce8f7ba"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bpts_s0 --preset 38m --seed 0 --eval-every 488 --test-file test.pt --data-dir /data/tinystories",
+   "arch": "noise",
+   "data_dir": "/data/tinystories",
+   "params": 37749776,
+   "logged": {
+    "val": 1.5579945024322062,
+    "test": 1.508110004312852,
+    "train_seconds": 32.26
+   },
+   "rescored": {
+    "val": 1.5579944849014282,
+    "test": 1.508110004312852
+   },
+   "split_token_sha256": {
+    "val": "027a8acc68f4ba540c8b958386fe09b986502bb5031accb797f616f158e864b1",
+    "test": "ce6fdc1b59c4b7f506fb29587fc0c807bae194fdd4d078f35d190fa47342ec4d"
+   }
+  },
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "dustts_s0": {
+  "name": "dustts_s0",
+  "table": "tinystories",
+  "label": "Dust record",
+  "modal_app_id": null,
+  "modal_app_url": null,
+  "code": {
+   "level": "unknown"
+  }
+ },
+ "oracle_hybrid": {
+  "name": "oracle_hybrid",
+  "table": "analysis",
+  "label": "oracle_hybrid",
+  "modal_app_id": "ap-IJmZrm9qThwhYnperueLxP",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-IJmZrm9qThwhYnperueLxP",
+  "start_pdt": "2026-10-17T09:22:32-07:00",
+  "end_pdt": "2026-10-17T09:27:46-07:00",
+  "billed_h100_usd": 0.327,
+  "command": "python analysis/oracle_hybrid.py --data-dir /data/data --out /data/runs/oracle_hybrid --switches 0.3,0.5,0.7 --phase2 attn,full --ends",
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "oh_base": {
+  "name": "oh_base",
+  "table": "analysis",
+  "label": "oh_base",
+  "modal_app_id": "ap-es6Ous04jZj96Yzb7SlnwF",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-es6Ous04jZj96Yzb7SlnwF",
+  "start_pdt": "2026-10-17T11:14:13-07:00",
+  "end_pdt": "2026-10-17T11:17:24-07:00",
+  "billed_h100_usd": 0.2019,
+  "command": "python analysis/oracle_hybrid.py --data-dir /data/data --out /data/runs/oh_base --switches 0.3 --phase2 attn --ends",
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "oh_route128": {
+  "name": "oh_route128",
+  "table": "analysis",
+  "label": "oh_route128",
+  "modal_app_id": "ap-Ji1qyeiE53FgneUO9L2nqj",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-Ji1qyeiE53FgneUO9L2nqj",
+  "start_pdt": "2026-10-17T11:17:24-07:00",
+  "end_pdt": "2026-10-17T11:20:49-07:00",
+  "billed_h100_usd": 0.2172,
+  "command": "python analysis/oracle_hybrid.py --data-dir /data/data --out /data/runs/oh_route128 --switches 0.3 --phase2 attn --ends --route-k 128",
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "oh_route64": {
+  "name": "oh_route64",
+  "table": "analysis",
+  "label": "oh_route64",
+  "modal_app_id": "ap-d3vkbhGAgsZFJMZrzBsS0r",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-d3vkbhGAgsZFJMZrzBsS0r",
+  "start_pdt": "2026-10-17T11:20:49-07:00",
+  "end_pdt": "2026-10-17T11:24:31-07:00",
+  "billed_h100_usd": 0.2326,
+  "command": "python analysis/oracle_hybrid.py --data-dir /data/data --out /data/runs/oh_route64 --switches 0.3 --phase2 attn --ends --route-k 64",
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "mech38": {
+  "name": "mech38",
+  "table": "analysis",
+  "label": "mech38",
+  "modal_app_id": "ap-K96Zq4I2ijEnZyQDwxFFmP",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-K96Zq4I2ijEnZyQDwxFFmP",
+  "start_pdt": "2026-10-17T15:00:14-07:00",
+  "end_pdt": "2026-10-17T15:01:18-07:00",
+  "billed_h100_usd": 0.066,
+  "command": "python analysis/clean_probe.py --data-dir /data/data --ckpts /data/runs/bc38_s1/ckpt_488.pt,/data/runs/bc38_s1/ckpt_976.pt,/data/runs/bc38_s1/ckpt_1464.pt,/data/runs/bc38_s1/ckpt_1952.pt,/data/runs/bc38_s1/ckpt_2440.pt,/data/runs/bc38_s1/ckpt_2928.pt,/data/runs/bc38_s1/ckpt_3416.pt,/data/runs/bc38_s1/ckpt_3904.pt,/data/runs/bc38_s1/ckpt_4392.pt,/data/runs/bc38_sw0/ckpt_488.pt,/data/runs/bc38_sw0/ckpt_976.pt,/data/runs/bc38_sw0/ckpt_1464.pt,/data/runs/bc38_sw0/ckpt_1952.pt,/data/runs/bc38_sw0/ckpt_2440.pt,/data/runs/bc38_sw0/ckpt_2928.pt,/data/runs/bc38_sw0/ckpt_3416.pt,/data/runs/bc38_sw0/ckpt_3904.pt,/data/runs/bc38_sw0/ckpt_4392.pt --names bc_488,bc_976,bc_1464,bc_1952,bc_2440,bc_2928,bc_3416,bc_3904,bc_4392,cut_488,cut_976,cut_1464,cut_1952,cut_2440,cut_2928,cut_3416,cut_3904,cut_4392 --seqs 4 --route-ks 64,128,256 --out /data/runs/mech38/result.json",
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "flops38b": {
+  "name": "flops38b",
+  "table": "analysis",
+  "label": "flops38b",
+  "modal_app_id": "ap-JNYhQ9ZveGecsNwxN4BpMZ",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-JNYhQ9ZveGecsNwxN4BpMZ",
+  "start_pdt": "2026-10-17T14:15:10-07:00",
+  "end_pdt": "2026-10-17T14:15:47-07:00",
+  "billed_h100_usd": 0.0331,
+  "command": "python analysis/flops.py --data-dir /data/data --preset 38m --methods backprop,boost,cut,dust",
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "flops243": {
+  "name": "flops243",
+  "table": "analysis",
+  "label": "flops243",
+  "modal_app_id": "ap-pjAAo5evPT7rpdneDX0n2v",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-pjAAo5evPT7rpdneDX0n2v",
+  "start_pdt": "2026-10-17T17:42:40-07:00",
+  "end_pdt": "2026-10-17T17:43:39-07:00",
+  "billed_h100_usd": 0.0571,
+  "command": "python analysis/flops.py --data-dir /data/data --preset 243m --methods backprop,boost,cut",
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "memory38": {
+  "name": "memory38",
+  "table": "analysis",
+  "label": "memory38",
+  "modal_app_id": "ap-QZoGSncrqs6X7NTiX7nvhJ",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-QZoGSncrqs6X7NTiX7nvhJ",
+  "start_pdt": "2026-10-17T17:57:31-07:00",
+  "end_pdt": "2026-10-17T17:59:00-07:00",
+  "billed_h100_usd": 0.09,
+  "command": "python analysis/memory.py --data-dir /data/data --preset 38m",
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "test_bc38": {
+  "name": "test_bc38",
+  "table": "analysis",
+  "label": "test_bc38",
+  "modal_app_id": "ap-hDHA3xd57d746bavcwt0Km",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-hDHA3xd57d746bavcwt0Km",
+  "start_pdt": "2026-10-17T12:38:16-07:00",
+  "end_pdt": "2026-10-17T12:40:27-07:00",
+  "billed_h100_usd": 0.2436,
+  "command": "python analysis/test_boostcut.py --data-dir /data/data --preset 38m --ckpt /data/runs/hybrid_cutk_f0.3/final.pt",
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "test_bc7": {
+  "name": "test_bc7",
+  "table": "analysis",
+  "label": "test_bc7",
+  "modal_app_id": "ap-1wIjZAX37L6VpLcnbXkVCO",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-1wIjZAX37L6VpLcnbXkVCO",
+  "start_pdt": "2026-10-17T12:40:27-07:00",
+  "end_pdt": "2026-10-17T12:41:43-07:00",
+  "billed_h100_usd": 0.0746,
+  "command": "python analysis/test_boostcut.py --data-dir /data/data --preset 7m",
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "test_plain3": {
+  "name": "test_plain3",
+  "table": "analysis",
+  "label": "test_plain3",
+  "modal_app_id": "ap-dvlOcQztz1pKZUJwENrNdz",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-dvlOcQztz1pKZUJwENrNdz",
+  "start_pdt": "2026-10-17T17:43:39-07:00",
+  "end_pdt": "2026-10-17T17:46:44-07:00",
+  "billed_h100_usd": 0.2677,
+  "command": "python analysis/test_boostcut.py --data-dir /data/data --preset 38m --arch plain",
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "prof_bc243": {
+  "name": "prof_bc243",
+  "table": "analysis",
+  "label": "prof_bc243",
+  "modal_app_id": "ap-7qoXwgVaFsYzH8MKQa18At",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-7qoXwgVaFsYzH8MKQa18At",
+  "start_pdt": "2026-10-17T12:59:53-07:00",
+  "end_pdt": "2026-10-17T13:03:00-07:00",
+  "billed_h100_usd": 0.196,
+  "command": "python analysis/test_boostcut.py --data-dir /data/data --preset 243m --ks 16 --chain-tokens 32 --key-chunk 4",
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "fid_plain": {
+  "name": "fid_plain",
+  "table": "analysis",
+  "label": "fid_plain",
+  "modal_app_id": "ap-QjMHMOeYmZyu13pO5uX6vZ",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-QjMHMOeYmZyu13pO5uX6vZ",
+  "start_pdt": "2026-10-17T21:09:07-07:00",
+  "end_pdt": "2026-10-17T21:09:43-07:00",
+  "billed_h100_usd": 0.0,
+  "command": "python analysis/route_fidelity.py --data-dir /data/data --run plain_bc38_s0 --arch plain --ks 64,128,256,512",
+  "provenance": {
+   "code_sha256": "b4a45f2db0bd6e6f9bbe24233940afb38e23a3187cc6f747634f9d03be03d357",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T04:09:18+00:00",
+   "end_utc": "2026-10-18T04:09:40+00:00",
+   "exit_code": 0
+  },
+  "code": {
+   "level": "snapshot",
+   "where": "provenance/fid_plain/code.tar.gz (sha256 manifest in job.json)"
+  }
+ },
+ "fid_noise": {
+  "name": "fid_noise",
+  "table": "analysis",
+  "label": "fid_noise",
+  "modal_app_id": "ap-2dgI05BGNzambZ5H81usZk",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-2dgI05BGNzambZ5H81usZk",
+  "start_pdt": "2026-10-17T21:09:43-07:00",
+  "end_pdt": "2026-10-17T21:10:13-07:00",
+  "billed_h100_usd": 0.0,
+  "command": "python analysis/route_fidelity.py --data-dir /data/data --run bc38_s1 --arch noise --ks 64,128,256,512",
+  "provenance": {
+   "code_sha256": "b4a45f2db0bd6e6f9bbe24233940afb38e23a3187cc6f747634f9d03be03d357",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T04:09:52+00:00",
+   "end_utc": "2026-10-18T04:10:09+00:00",
+   "exit_code": 0
+  },
+  "code": {
+   "level": "snapshot",
+   "where": "provenance/fid_noise/code.tar.gz (sha256 manifest in job.json)"
+  }
+ },
+ "rescore_bc38f": {
+  "name": "rescore_bc38f",
+  "table": "analysis",
+  "label": "rescore_bc38f",
+  "modal_app_id": "ap-cTfQWsvaEEVbz1Jm0c0Sjx",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-cTfQWsvaEEVbz1Jm0c0Sjx",
+  "start_pdt": "2026-10-17T17:13:13-07:00",
+  "end_pdt": "2026-10-17T17:13:48-07:00",
+  "billed_h100_usd": 0.0966,
+  "command": "python utils/eval.py --data-dir /data/data /data/runs/bc38f_s0/final.pt",
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "prepare_test": {
+  "name": "prepare_test",
+  "table": "analysis",
+  "label": "prepare_test",
+  "modal_app_id": "ap-e9wSCOC2fHoTUOHx670cCQ",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-e9wSCOC2fHoTUOHx670cCQ",
+  "start_pdt": "2026-10-17T12:33:51-07:00",
+  "end_pdt": "2026-10-17T12:35:15-07:00",
+  "billed_h100_usd": 0.0,
+  "command": "python analysis/prepare_test.py --data-dir /data/data",
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ },
+ "ts_prep": {
+  "name": "ts_prep",
+  "table": "analysis",
+  "label": "ts_prep",
+  "modal_app_id": "ap-9oEXPWktsxgag5Q2nKd3wJ",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-9oEXPWktsxgag5Q2nKd3wJ",
+  "start_pdt": "2026-10-17T16:40:38-07:00",
+  "end_pdt": "2026-10-17T16:41:44-07:00",
+  "billed_h100_usd": 0.0,
+  "command": "python analysis/prepare_tinystories.py --data-dir /data/data --data-dir /data/tinystories",
+  "code": {
+   "level": "command",
+   "note": "the logged command and config.json; the script has since gained only options whose defaults keep its behavior (see ledger/README.md)"
+  }
+ }
+}

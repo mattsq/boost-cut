@@ -1,0 +1,42 @@
+$ python analysis/oracle_hybrid.py --data-dir /data/data --out /data/runs/oh_route64 --switches 0.3 --phase2 attn --ends --route-k 64
+{"run": "boost", "step": 61, "train_loss": 5.504936218261719}
+{"run": "boost", "step": 122, "train_loss": 5.260536193847656}
+{"run": "boost", "step": 183, "train_loss": 4.891183853149414}
+{"run": "boost", "step": 244, "train_loss": 5.053177356719971}
+{"run": "boost", "step": 305, "train_loss": 4.707152366638184}
+{"run": "boost", "step": 366, "train_loss": 4.614806175231934}
+{"run": "boost", "step": 427, "train_loss": 4.617710113525391}
+{"run": "boost", "step": 488, "train_loss": 4.455020904541016}
+{"run": "boost", "step": 549, "train_loss": 4.402604579925537}
+{"run": "boost", "step": 610, "train_loss": 4.492069244384766}
+{"run": "boost", "step": 671, "train_loss": 4.37656307220459}
+{"run": "boost", "step": 732, "train_loss": 4.364985942840576}
+{"run": "boost", "step": 793, "train_loss": 4.341788291931152}
+{"run": "boost", "step": 854, "train_loss": 4.255040168762207}
+{"run": "boost", "step": 915, "train_loss": 4.202311038970947}
+{"run": "boost", "step": 976, "train_loss": 4.282062530517578}
+{"run": "boost", "step": 1037, "train_loss": 4.109657287597656}
+{"run": "boost", "step": 1098, "train_loss": 4.035399436950684}
+{"run": "boost", "step": 1159, "train_loss": 4.147941589355469}
+{"run": "boost", "step": 1220, "train_loss": 4.052970886230469}
+{"run": "boost_f1.0", "val_loss": 4.059769777690663, "knob_share": 0.0891, "knob_max": 7552, "seconds": 109.2}
+{"run": "attn_f0.0", "step": 61, "train_loss": 5.25054931640625}
+{"run": "attn_f0.0", "step": 122, "train_loss": 5.050165176391602}
+{"run": "attn_f0.0", "step": 183, "train_loss": 4.715753078460693}
+{"run": "attn_f0.0", "step": 244, "train_loss": 4.532944679260254}
+{"run": "attn_f0.0", "step": 305, "train_loss": 4.360101222991943}
+{"run": "attn_f0.0", "step": 366, "train_loss": 4.354758262634277}
+{"run": "attn_f0.0", "step": 427, "train_loss": 4.301400184631348}
+{"run": "attn_f0.0", "step": 488, "train_loss": 4.172900676727295}
+{"run": "attn_f0.0", "step": 549, "train_loss": 3.9831323623657227}
+{"run": "attn_f0.0", "step": 610, "train_loss": 3.9806880950927734}
+{"run": "attn_f0.0", "val_loss": 4.018342011115131, "knob_share": 0.1666, "knob_max": 912, "seconds": 164.0}
+{"run": "attn_f0.3", "step": 244, "train_loss": 4.3369340896606445}
+{"run": "attn_f0.3", "step": 305, "train_loss": 4.2173380851745605}
+{"run": "attn_f0.3", "step": 366, "train_loss": 4.21442985534668}
+{"run": "attn_f0.3", "step": 427, "train_loss": 4.199759006500244}
+{"run": "attn_f0.3", "step": 488, "train_loss": 4.081485271453857}
+{"run": "attn_f0.3", "step": 549, "train_loss": 3.896432876586914}
+{"run": "attn_f0.3", "step": 610, "train_loss": 3.8993401527404785}
+{"run": "attn_f0.3", "val_loss": 3.927517729647019, "knob_share": 0.0869, "knob_max": 1360, "seconds": 199.6}
+[modal_app] exit 0 after 209s

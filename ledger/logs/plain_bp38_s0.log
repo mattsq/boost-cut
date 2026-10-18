@@ -1,0 +1,13 @@
+$ torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/plain_bp38_s0 --preset 38m --seed 0 --arch plain --test-file test.pt
+{"step": 61, "train_loss": 5.369096755981445, "train_seconds": 2.38}
+{"step": 122, "train_loss": 5.213156700134277, "train_seconds": 4.72}
+{"step": 183, "train_loss": 4.856171607971191, "train_seconds": 7.06}
+{"step": 244, "train_loss": 4.659387111663818, "train_seconds": 9.4}
+{"step": 305, "train_loss": 4.460963726043701, "train_seconds": 11.74}
+{"step": 366, "train_loss": 4.4851484298706055, "train_seconds": 14.08}
+{"step": 427, "train_loss": 4.361921310424805, "train_seconds": 16.43}
+{"step": 488, "train_loss": 4.1524128913879395, "train_seconds": 18.76}
+{"step": 549, "train_loss": 3.914839267730713, "train_seconds": 21.08}
+{"step": 610, "train_loss": 3.8709018230438232, "train_seconds": 23.41}
+{"val_loss": 3.916370858164395, "train_seconds": 23.41, "steps": 610, "test_loss": 3.908545650103513}
+[modal_app] exit 0 after 56s

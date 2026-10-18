@@ -1,0 +1,13 @@
+$ torchrun --standalone --nproc_per_node=8 analysis/backprop_preset.py --data-dir /data/data --output /data/runs/bp38_curve --preset 38m --seed 0 --eval-every 488 --test-file test.pt
+{"step": 61, "train_loss": 5.242331504821777, "train_seconds": 3.07, "val_loss": 5.291479527950287}
+{"step": 122, "train_loss": 4.975130558013916, "train_seconds": 6.0, "val_loss": 4.972975541563595}
+{"step": 183, "train_loss": 4.605714797973633, "train_seconds": 9.03, "val_loss": 4.689542924656587}
+{"step": 244, "train_loss": 4.3521857261657715, "train_seconds": 12.05, "val_loss": 4.421305786160862}
+{"step": 305, "train_loss": 4.147886753082275, "train_seconds": 14.97, "val_loss": 4.223322380991543}
+{"step": 366, "train_loss": 4.045609951019287, "train_seconds": 17.94, "val_loss": 4.07961572969661}
+{"step": 427, "train_loss": 3.993079662322998, "train_seconds": 20.85, "val_loss": 3.9798019686165977}
+{"step": 488, "train_loss": 3.920339345932007, "train_seconds": 23.91, "val_loss": 3.861045825130799}
+{"step": 549, "train_loss": 3.690988063812256, "train_seconds": 26.87, "val_loss": 3.761037058690015}
+{"step": 610, "train_loss": 3.67429780960083, "train_seconds": 29.83}
+{"val_loss": 3.7084562480449677, "train_seconds": 29.83, "steps": 610, "test_loss": 3.7013357632300434}
+[modal_app] exit 0 after 69s

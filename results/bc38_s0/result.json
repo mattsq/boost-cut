@@ -1,0 +1,8 @@
+{
+  "val_loss": 3.954576776308172,
+  "train_seconds": 453.62,
+  "boost_steps": 366,
+  "cut_steps": 427,
+  "tokens": 9994240,
+  "test_loss": 3.94431153290412
+}

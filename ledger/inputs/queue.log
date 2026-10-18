@@ -1,0 +1,133 @@
+12:33:51 start prepare_test
+12:35:15 end prepare_test exit=0
+12:38:16 start test_bc38
+12:40:27 end test_bc38 exit=0
+12:40:27 start test_bc7
+12:41:43 end test_bc7 exit=0
+12:42:13 start bc_smoke243
+12:47:25 end bc_smoke243 exit=0
+12:47:25 start bc38_s0
+12:59:53 end bc38_s0 exit=0
+12:59:53 start prof_bc243
+13:03:00 end prof_bc243 exit=0
+13:03:30 start prof_bc243_c64
+13:08:45 end prof_bc243_c64 exit=0
+13:08:45 start prof_bc243_c128
+13:11:29 end prof_bc243_c128 exit=0
+13:11:59 start bc243_s0
+14:12:03 end bc243_s0 exit=0
+14:12:03 start flops38
+14:12:28 end flops38 exit=0
+14:12:28 start bp38_s0
+14:15:10 end bp38_s0 exit=0
+14:15:10 start flops38b
+14:15:47 end flops38b exit=0
+14:15:48 start bp38_s1
+14:18:08 end bp38_s1 exit=0
+14:18:08 start bp38_s2
+14:22:38 end bp38_s2 exit=0
+14:22:38 start bc38_s1
+14:32:39 end bc38_s1 exit=0
+14:32:39 start bc38_s2
+14:48:53 end bc38_s2 exit=0
+14:48:53 start bc38_sw0
+15:00:13 end bc38_sw0 exit=0
+15:00:14 start mech38
+15:01:18 end mech38 exit=0
+15:01:18 start bc38_sw100
+15:09:55 end bc38_sw100 exit=0
+15:09:55 start bc38_sw50
+15:20:50 end bc38_sw50 exit=0
+15:20:50 start bc38_k64
+15:30:40 end bc38_k64 exit=0
+15:30:40 start bc38_k256
+15:44:18 end bc38_k256 exit=0
+15:44:18 start bc38_kall
+16:06:12 end bc38_kall exit=0
+16:06:12 start rescore_bc38
+16:06:38 end rescore_bc38 exit=0
+16:06:38 start bc38_ksampled
+16:19:27 end bc38_ksampled exit=0
+16:19:27 start bc38_bexact
+16:29:20 end bc38_bexact exit=0
+16:29:20 start bc38_fg128
+16:40:38 end bc38_fg128 exit=0
+16:40:38 start ts_prep
+16:41:44 end ts_prep exit=0
+16:41:44 start bcts_s0
+16:52:02 end bcts_s0 exit=0
+16:52:02 start bpts_s0
+16:53:56 end bpts_s0 exit=0
+16:53:57 start bc7_s0
+16:57:49 end bc7_s0 exit=0
+16:57:49 start bp7_s0
+16:59:21 end bp7_s0 exit=0
+16:59:21 start bp243_s0
+17:02:21 end bp243_s0 exit=0
+17:02:21 start bc38f_s0
+17:13:13 end bc38f_s0 exit=0
+17:13:13 start rescore_bc38f
+17:13:48 end rescore_bc38f exit=0
+17:13:48 start bc38f_s1
+17:24:15 end bc38f_s1 exit=0
+17:24:15 start bc38f_s2
+17:34:59 end bc38f_s2 exit=0
+17:34:59 start test_plain
+17:35:30 end test_plain exit=0
+17:35:30 start bc38_dfa
+17:40:49 end bc38_dfa exit=0
+17:40:49 start test_plain2
+17:42:40 end test_plain2 exit=0
+17:42:40 start flops243
+17:43:39 end flops243 exit=0
+17:43:39 start test_plain3
+17:46:44 end test_plain3 exit=0
+17:46:44 start bc38_sw0_s1
+17:57:31 end bc38_sw0_s1 exit=0
+17:57:31 start memory38
+17:59:00 end memory38 exit=0
+17:59:00 start bc38_sw0_s2
+18:10:08 end bc38_sw0_s2 exit=0
+18:10:08 start bc38f_sw100_s0
+18:18:37 end bc38f_sw100_s0 exit=0
+18:18:37 start ledger_rescore_1
+18:21:24 end ledger_rescore_1 exit=0
+18:21:24 start bc38f_sw100_s1
+18:33:26 end bc38f_sw100_s1 exit=0
+18:33:26 start bc38f_sw100_s2
+18:42:09 end bc38f_sw100_s2 exit=0
+18:42:09 start bp38_lr0.5
+18:45:00 end bp38_lr0.5 exit=0
+18:45:00 start bp38_lr2
+18:47:38 end bp38_lr2 exit=0
+18:47:38 start bp38_lr4
+18:50:12 end bp38_lr4 exit=0
+18:50:12 start bp38_curve
+18:52:00 end bp38_curve exit=0
+18:52:00 start bc38_dfa_lr0.3
+18:56:19 end bc38_dfa_lr0.3 exit=0
+18:56:19 start bc38_dfa_lr0.1
+19:00:42 end bc38_dfa_lr0.1 exit=0
+19:00:42 start bc38_dfa_lr0.03
+19:07:27 end bc38_dfa_lr0.03 exit=0
+19:07:27 start bc38_fg128_lr0.5
+19:15:34 end bc38_fg128_lr0.5 exit=0
+19:15:34 start bc38f_lr0.5
+19:27:30 end bc38f_lr0.5 exit=0
+19:27:30 start bc38f_lr2
+19:38:28 end bc38f_lr2 exit=0
+19:38:28 start plain_bc38_s0
+19:49:13 end plain_bc38_s0 exit=0
+19:49:13 start plain_bp38_s0
+19:53:41 end plain_bp38_s0 exit=0
+19:53:41 start ledger_rescore_2
+19:55:13 end ledger_rescore_2 exit=0
+19:55:13 start dust38_s0
+21:09:07 end dust38_s0 exit=0
+21:09:07 start fid_plain
+21:09:43 end fid_plain exit=0
+21:09:43 start fid_noise
+21:10:13 end fid_noise exit=0
+21:10:13 start smoke_plain_dust
+21:14:25 end smoke_plain_dust exit=0
+21:14:25 start dust_speedrun_official

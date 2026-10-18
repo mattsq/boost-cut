@@ -1,0 +1,8 @@
+$ python analysis/test_boostcut.py --data-dir /data/data --preset 243m --ks 16 --chain-tokens 32 --key-chunk 4
+{"cut_k256": {"seconds": 6.931, "parts": {"forward": 0.0135, "routes": 0.0085, "top": 0.0126, "chain": 6.0738, "writers_hidden": 0.085, "local": 0.7361}, "emb": 0.9939, "top": 1.0, "mids": [0.9922, 0.9931, 0.994, 0.9948, 0.9955, 0.996, 0.9965, 0.997, 0.9974, 0.9978, 0.9981, 0.9985, 0.9988, 0.9991, 0.9994, 0.9997], "lam": [0.9996, 0.9802], "keys": {"0": [1.0, 1.0], "8": [1.0, 1.0], "15": [1.0, 1.0]}}}
+/usr/local/lib/python3.12/site-packages/torch/nn/attention/flex_attention.py:1559: FutureWarning: return_lse is deprecated and will be removed in v2.10. Please use return_aux=AuxRequest(lse=True) instead.
+  _warn_once(
+/usr/local/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2056: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS="+dynamo" for a DEBUG stack trace.
+  torch._dynamo.utils.warn_once(msg)
+{"boost_exact_keys": {"seconds": 1.678, "keys": {"0": [1.0, 1.0], "8": [1.0, 1.0], "15": [1.0, 1.0]}}}
+[modal_app] exit 0 after 174s

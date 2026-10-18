@@ -1,0 +1,9 @@
+$ python analysis/prepare_tinystories.py --data-dir /data/data --data-dir /data/tinystories
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"train.pt": {"rows": 4880, "prediction_tokens": 9994240, "token_sha256": "72d27c2ebfb87f304a1df048152f7ec13f25b29fe9d5ea5a174965eb6aa9ff2f"}, "val.pt": {"rows": 544, "prediction_tokens": 1114112, "token_sha256": "027a8acc68f4ba540c8b958386fe09b986502bb5031accb797f616f158e864b1"}, "test.pt": {"rows": 544, "prediction_tokens": 1114112, "token_sha256": "ce6fdc1b59c4b7f506fb29587fc0c807bae194fdd4d078f35d190fa47342ec4d"}}
+'[Errno 9] Bad file descriptor' thrown while requesting GET https://huggingface.co/datasets/roneneldan/TinyStories/resolve/f54c09fd23315a6f9c86f9dc80f725de7d8f9c64/data/train-00000-of-00004-2d5a1467fff1081b.parquet
+Retrying in 1s [Retry 1/5].
+Fatal Python error: PyGILState_Release: auto-releasing thread-state, but no thread-state for this thread
+Python runtime state: finalizing (tstate=0x00002b6b7ad54c50)
+
+[modal_app] exit -6 after 42s
