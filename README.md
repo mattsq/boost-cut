@@ -13,7 +13,9 @@ nothing is backpropagated. The [ledgers](ledger/) tie every number here to its r
 | **Boost** | 2: time to 4.2 | 4.123 | **314 s** | 4.184 in 1,239 s |
 
 Both are seed 0, from the official logs in `entries/`. Over 3 seeds, Boost → Cut reaches held-out test loss
-3.935 ± 0.012. Backprop with the same model and optimizer reaches 3.706 ± 0.009.
+3.935 ± 0.012. Backprop with the same model and optimizer reaches 3.706 ± 0.009. On our own 8×H100 nodes, the
+Track 1 record's recipe reproduces at 3.992 in 4,292 s, and the speedrun record's script runs in 1,146 s, so Boost
+is 3.6× faster on the same hardware.
 
 - **Boost.** Every attention and MLP layer learns only from the shared output head reading the stream right after
   it. Each token's credit is measured exactly, by nudging its stream along a full set of orthogonal directions.

@@ -399,14 +399,32 @@ CLAIMS += [
              f'×0.03: {f3(result("bc38_dfa_lr0.03")["test_loss"])})'),
     ('Section 4.3: DFA best', None, lambda: f'reaches only {f3(result("bc38_dfa_lr0.1")["test_loss"])}'),
     ('Section 4.6: plain Boost → Cut', None,
-     lambda: f'| Boost → Cut | {f3(result("plain_bc38_s0")["test_loss"])} | {f3(result("plain_bc38_s0")["val_loss"])} | '
+     lambda: f'| Boost → Cut, top-128 routes | {f3(result("plain_bc38_s0")["test_loss"])} | {f3(result("plain_bc38_s0")["val_loss"])} | '
              f'{secs([result("plain_bc38_s0")["train_seconds"]])} |'),
     ('Section 4.6: plain backprop', None,
      lambda: f'| backprop, same optimizer | {f3(result("plain_bp38_s0")["test_loss"])} | {f3(result("plain_bp38_s0")["val_loss"])} | '
              f'{secs([result("plain_bp38_s0")["train_seconds"]])} |'),
     ('Section 4.6 and 8: plain gap', None,
      lambda: f'gap to backprop grows from {gap(BC, BP):.2f} to {gap(["plain_bc38_s0"], ["plain_bp38_s0"]):.2f}'),
-    ('Abstract: plain gap', None, lambda: f'the gap grows to {gap(["plain_bc38_s0"], ["plain_bp38_s0"]):.2f} nats'),
+    ('Abstract: plain GPT without the shortcut', None,
+     lambda: f'with all units, the gap to backprop is {gap(["plain_bc38_kall"], ["plain_bp38_s0"]):.2f} nats, at '
+             f'{result("plain_bc38_kall")["train_seconds"] / result("plain_bc38_s0")["train_seconds"]:.1f}× the time'),
+    ('Section 4.6: plain all-units row', None,
+     lambda: f'| Boost → Cut, all 2,048 units | {f3(result("plain_bc38_kall")["test_loss"])} | '
+             f'{f3(result("plain_bc38_kall")["val_loss"])} | {secs([result("plain_bc38_kall")["train_seconds"]])} |'),
+    ('Section 4.6: all units, test', None,
+     lambda: f'Boost → Cut reaches test {f3(result("plain_bc38_kall")["test_loss"])}, and Cut\nimproves at every evaluation'
+     if (lambda v: all(later < earlier for earlier, later in zip(v, v[1:])))(
+         [val_at('plain_bc38_kall', q) for q in (1952, 2440, 2928, 3416, 3904, 4392)] + [result('plain_bc38_kall')['val_loss']])
+     else 'Cut does not improve at every evaluation'),
+    ('Section 4.6: all units, gap and time', None,
+     lambda: f'The gap to backprop is {gap(["plain_bc38_kall"], ["plain_bp38_s0"]):.2f}, against {gap(BC, BP):.2f} on the '
+             f'benchmark model, at {result("plain_bc38_kall")["train_seconds"] / result("plain_bc38_s0")["train_seconds"]:.1f}× '
+             f'the time of\nthe routed run'),
+    ('Section 8: plain GPT', None,
+     lambda: f'it fails (gap {gap(["plain_bc38_s0"], ["plain_bp38_s0"]):.2f}), and\n  without it the gap is '
+             f'{gap(["plain_bc38_kall"], ["plain_bp38_s0"]):.2f} at '
+             f'{result("plain_bc38_kall")["train_seconds"] / result("plain_bc38_s0")["train_seconds"]:.1f}× the time'),
     ('Section 4.6: Cut phase curves', None,
      lambda: 'validation goes ' + ', '.join(f'{val_at("plain_bc38_s0", q):.2f}' for q in (1952, 2440, 2928, 3416, 3904))
              + f' and {val_at("plain_bc38_s0", 4392):.2f} over its six evaluations, where the\n  benchmark model falls '
@@ -466,6 +484,11 @@ README_CLAIMS = [
      else 'target missed'),
     ('README: Boost → Cut over 3 seeds', None, lambda: pm(field(BC, 'test_loss'))),
     ('README: backprop over 3 seeds', None, lambda: pm(field(BP, 'test_loss'))),
+    ('README: same hardware', None,
+     lambda: f"Track 1 record's recipe reproduces at {f3(result('dust38_s0')['val_loss'])} in "
+             f"{result('dust38_s0')['train_seconds']:,.0f} s, and the speedrun record's script runs in "
+             f"{result('dust_speedrun_official2')['train_seconds']:,.0f} s, so Boost\nis "
+             f"{result('dust_speedrun_official2')['train_seconds'] / entry_log('track2_boost')['train_seconds']:.1f}× faster"),
     ('README: why Cut, Boost alone stalls', None,
      lambda: f'Boost alone stalls at {mean(field(BOOST, "test_loss")):.3f} test loss'),
     ('README: why Cut, routes', None,

@@ -53,5 +53,7 @@
     "key_chunk": 8
   },
   "polar_margin": 1.1,
-  "torch_version": "2.10.0+cu128"
+  "torch_version": "2.10.0+cu128",
+  "arch": "plain",
+  "wrapper": "/root/noise/analysis/plain_gpt.py"
 }

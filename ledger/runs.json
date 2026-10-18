@@ -882,7 +882,7 @@
   "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-B2fa28YS6Ak4cQt5KlxIVb",
   "start_pdt": "2026-10-17T19:55:13-07:00",
   "end_pdt": "2026-10-17T21:09:07-07:00",
-  "billed_h100_usd": 33.9349,
+  "billed_h100_usd": 39.5,
   "config": {
    "method": "dust_record",
    "preset": "38m",
@@ -997,10 +997,42 @@
   "name": "dust38_s1",
   "table": "main",
   "label": "Dust record (16k)",
-  "modal_app_id": null,
-  "modal_app_url": null,
+  "modal_app_id": "ap-DjFa1Gwud4X3Q24KYUmiHs",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-DjFa1Gwud4X3Q24KYUmiHs",
+  "start_pdt": "2026-10-17T22:26:17-07:00",
+  "end_pdt": null,
+  "billed_h100_usd": 0.0,
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/dust_preset.py --data-dir /data/data --output /data/runs/dust38_s1 --preset 38m --seed 1 --eval-every 61 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "b4a45f2db0bd6e6f9bbe24233940afb38e23a3187cc6f747634f9d03be03d357",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T05:28:41+00:00",
+   "end_utc": null,
+   "exit_code": null
+  },
   "code": {
-   "level": "unknown"
+   "level": "snapshot",
+   "where": "provenance/dust38_s1/code.tar.gz (sha256 manifest in job.json)"
   }
  },
  "dust38_s2": {
@@ -4552,8 +4584,8 @@
   "modal_app_id": "ap-OYdtkzbM1KiBsbfilVHrLs",
   "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-OYdtkzbM1KiBsbfilVHrLs",
   "start_pdt": "2026-10-17T21:45:47-07:00",
-  "end_pdt": null,
-  "billed_h100_usd": 0.0,
+  "end_pdt": "2026-10-17T22:03:54-07:00",
+  "billed_h100_usd": 7.3207,
   "config": {
    "script": "/root/noise/train/boostcut/run.py",
    "world": 8,
@@ -4609,7 +4641,17 @@
     "key_chunk": 8
    },
    "polar_margin": 1.1,
-   "torch_version": "2.10.0+cu128"
+   "torch_version": "2.10.0+cu128",
+   "arch": "plain",
+   "wrapper": "/root/noise/analysis/plain_gpt.py"
+  },
+  "result": {
+   "val_loss": 4.23973737744724,
+   "train_seconds": 938.38,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 4.223580963471356
   },
   "command": "torchrun --standalone --nproc_per_node=8 analysis/plain_gpt.py --data-dir /data/data --output /data/runs/plain_bc38_kall --preset 38m --seed 0 --route-k 2048 --eval-every 488 --test-file test.pt",
   "provenance": {
@@ -4636,8 +4678,8 @@
    "cuda": "12.8",
    "python": "3.12.10",
    "start_utc": "2026-10-18T04:46:10+00:00",
-   "end_utc": null,
-   "exit_code": null
+   "end_utc": "2026-10-18T05:03:49+00:00",
+   "exit_code": 0
   },
   "code": {
    "level": "snapshot",
@@ -4729,14 +4771,14 @@
    "how": "the Track 2 entry: unchanged since 09:12:14, before its run, and byte-identical to entries/track2_boost/run.py"
   }
  },
- "dust_speedrun_official": {
-  "name": "dust_speedrun_official",
+ "dust_speedrun_official2": {
+  "name": "dust_speedrun_official2",
   "table": "speedrun",
   "label": "Dust speedrun record, its official script, our hardware",
-  "modal_app_id": "ap-6oUBDwfSEHJfJWAUlWFxg5",
-  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-6oUBDwfSEHJfJWAUlWFxg5",
-  "start_pdt": "2026-10-17T21:14:25-07:00",
-  "end_pdt": "2026-10-17T21:45:20-07:00",
+  "modal_app_id": "ap-yshdiX7H3mPp3lGZZgu7Xv",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-yshdiX7H3mPp3lGZZgu7Xv",
+  "start_pdt": "2026-10-17T22:03:54-07:00",
+  "end_pdt": "2026-10-17T22:25:49-07:00",
   "billed_h100_usd": 0.0,
   "config": {
    "script": "/root/noise/train/speedrun/run.py",
@@ -4801,7 +4843,14 @@
    },
    "torch_version": "2.10.0+cu128"
   },
-  "command": "torchrun --standalone --nproc_per_node=8 train/speedrun/run.py --data-dir /data/data --output /data/runs/dust_speedrun_official",
+  "result": {
+   "val_loss": 4.184724344926722,
+   "train_seconds": 1146.13,
+   "steps": 610,
+   "tokens": 9994240,
+   "reached_target": true
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 train/speedrun/run.py --data-dir /data/data --output /data/runs/dust_speedrun_official2",
   "provenance": {
    "code_sha256": "b4a45f2db0bd6e6f9bbe24233940afb38e23a3187cc6f747634f9d03be03d357",
    "data_files": {
@@ -4813,25 +4862,52 @@
     "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
    },
    "gpus": [
-    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
-    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
-    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
-    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
-    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
-    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
-    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
-    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB"
    ],
    "torch": "2.10.0+cu128",
    "cuda": "12.8",
    "python": "3.12.10",
-   "start_utc": "2026-10-18T04:14:38+00:00",
-   "end_utc": null,
-   "exit_code": null
+   "start_utc": "2026-10-18T05:04:32+00:00",
+   "end_utc": "2026-10-18T05:25:46+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "dust_speedrun_official2",
+   "sha256": {
+    "final.pt": "e5e0006974f12f789be4e1dcff222037bcedfea7d7da2f1ee5127e5dfe640330",
+    "config.json": "c00af2a6559e2a586bae9acf6d342bfbf0875d7567c72dd0e31484d22d9f8e80",
+    "result.json": "8fbbd113bb9abfb28403c5dfcea6fdcf810e055aa74ddfbc50a94a08f52ac6a6",
+    "metrics.jsonl": "83747c704521f155a65b4840c106bdeaaff6fdd46b1cc9db62539fd3e5b6fba7"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/speedrun/run.py --data-dir /data/data --output /data/runs/dust_speedrun_official2",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 4.184724344926722,
+    "test": null,
+    "train_seconds": 1146.13
+   },
+   "rescored": {
+    "val": 4.184724302852855,
+    "test": 4.172536197830649
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 4.184724302852855
   },
   "code": {
    "level": "snapshot",
-   "where": "provenance/dust_speedrun_official/code.tar.gz (sha256 manifest in job.json)"
+   "where": "provenance/dust_speedrun_official2/code.tar.gz (sha256 manifest in job.json)"
   }
  },
  "bcts_s0": {
@@ -5215,7 +5291,7 @@
   "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-QjMHMOeYmZyu13pO5uX6vZ",
   "start_pdt": "2026-10-17T21:09:07-07:00",
   "end_pdt": "2026-10-17T21:09:43-07:00",
-  "billed_h100_usd": 0.0,
+  "billed_h100_usd": 0.0285,
   "command": "python analysis/route_fidelity.py --data-dir /data/data --run plain_bc38_s0 --arch plain --ks 64,128,256,512",
   "provenance": {
    "code_sha256": "b4a45f2db0bd6e6f9bbe24233940afb38e23a3187cc6f747634f9d03be03d357",
@@ -5250,7 +5326,7 @@
   "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-2dgI05BGNzambZ5H81usZk",
   "start_pdt": "2026-10-17T21:09:43-07:00",
   "end_pdt": "2026-10-17T21:10:13-07:00",
-  "billed_h100_usd": 0.0,
+  "billed_h100_usd": 0.0266,
   "command": "python analysis/route_fidelity.py --data-dir /data/data --run bc38_s1 --arch noise --ks 64,128,256,512",
   "provenance": {
    "code_sha256": "b4a45f2db0bd6e6f9bbe24233940afb38e23a3187cc6f747634f9d03be03d357",

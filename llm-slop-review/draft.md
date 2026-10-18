@@ -24,8 +24,8 @@ On the benchmark's 38M-parameter GPT, trained on 10M tokens for one epoch, Boost
 **3.935 ± 0.012** (3 seeds) in 7.3 minutes on 8×H100. The Dust record reaches [pending: 3 seeds] in [pending]
 minutes (official log: validation 3.991 in 72 minutes), and Boost → Cut uses 24× fewer matrix FLOPs. From 7.3M to 243M
 parameters, Boost → Cut trails backprop by a roughly constant 0.23–0.26 nats [243M final configuration pending]. The
-On a plain GPT (GELU, no value embeddings or skip scalars) the gap grows to 0.65 nats, so the method does not yet
-transfer as is. The stagewise head start is what concentrates credit onto few routes, which is why the route
+On a plain GPT (GELU, no value embeddings or skip scalars), the route shortcut fails because GELU spreads each
+token's work over most units; with all units, the gap to backprop is 0.32 nats, at 2.0× the time. The stagewise head start is what concentrates credit onto few routes, which is why the route
 restriction is nearly free:
 it costs 0.005 nats of exact-credit loss after the head start and 0.028 without it. Boost → Cut still uses about 136×
 backprop's FLOPs. An oracle with exact attention-cut credit puts 0.19 of its 0.23-nat gap to backprop on the
@@ -326,10 +326,11 @@ The gap to backprop is about half of FineWeb's.
 
 | plain GPT, seed 0 | test | val | time |
 |---|---|---|---|
-| Boost → Cut | 4.560 | 4.573 | 475 s |
+| Boost → Cut, top-128 routes | 4.560 | 4.573 | 475 s |
+| Boost → Cut, all 2,048 units | 4.224 | 4.240 | 938 s |
 | backprop, same optimizer | 3.909 | 3.916 | 23 s |
 
-**The method does not transfer as is.**
+**With the route shortcut, the method does not transfer.**
 - The gap to backprop grows from 0.23 to 0.65.
 - Cut's phase stalls: validation goes 4.73, 4.68, 4.72, 4.79, 4.72 and 4.63 over its six evaluations, where the
   benchmark model falls steadily from 4.45 to 3.99.
@@ -343,7 +344,10 @@ credit.
   reach only 0.68. The units carrying 90% of the output grow from 697–840 at the switch to as many as 1,523.
 - **A feedback loop:** training on the restricted credit makes the plain GPT denser, and that makes the restriction
   worse.
-- [A run with all 2,048 units: pending.]
+
+**Without the shortcut, most of the loss comes back.** With all 2,048 units, Boost → Cut reaches test 4.224, and Cut
+improves at every evaluation. The gap to backprop is 0.32, against 0.23 on the benchmark model, at 2.0× the time of
+the routed run. The strong-route shortcut needs sparse activations; the rest of the method carries over.
 
 ## 5. Why strong routes, and why a head start
 
@@ -420,7 +424,8 @@ every checkpoint.
   reduces to the transposed-attention product, which the line excludes.
 - **Compute.** About 136× backprop's FLOPs and about 14× its wall-clock on the same hardware. Forward-only here means
   no backward pass, not cheaper training.
-- **Architecture.** On a plain GPT the gap to backprop grows from 0.23 to 0.65 (Section 4.6). The method as tuned
+- **Architecture.** The route shortcut needs sparse activations. On a plain GPT with GELU it fails (gap 0.65), and
+  without it the gap is 0.32 at 2.0× the time (Section 4.6). The method as tuned
   depends on the benchmark model's features.
 - **Breadth.** Two datasets, up to 243M parameters, and 10M tokens. Longer training and larger models are untested.
 - **Seeds.** 3 seeds for the main cells; the ablations and the scale and generality cells have one.

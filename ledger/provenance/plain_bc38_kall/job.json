@@ -65,5 +65,7 @@
     "MODAL_IMAGE_ID": "im-yhNkD1OVZen3epFTXVO51i",
     "MODAL_ENVIRONMENT": "main"
   },
+  "end_utc": "2026-10-18T05:03:49+00:00",
+  "exit_code": 0,
   "code_files_note": "hashes of the released files only; code_sha256 covers the whole code tree that ran"
 }

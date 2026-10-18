@@ -39,7 +39,7 @@ RUNS = {
     'plain_bc38_s0': ('plain', 'Boost → Cut'), 'plain_bp38_s0': ('plain', 'backprop'), 'plain_dust38_s0': ('plain', 'Dust record'),
     'plain_bc38_kall': ('plain', 'Boost → Cut, all 2,048 units'),
     'boost_official_s0': ('speedrun', 'Boost speedrun entry (official log)'),
-    'dust_speedrun_official': ('speedrun', 'Dust speedrun record, its official script, our hardware'),
+    'dust_speedrun_official2': ('speedrun', 'Dust speedrun record, its official script, our hardware'),
     'bcts_s0': ('tinystories', 'Boost → Cut'), 'bpts_s0': ('tinystories', 'backprop'), 'dustts_s0': ('tinystories', 'Dust record'),
 }
 
