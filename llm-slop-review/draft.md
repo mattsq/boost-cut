@@ -21,8 +21,7 @@ follow structure that trained networks already have. Two observations drive the 
   units. Its keys come from single-key experiments evaluated in closed form.
 
 On the benchmark's 38M-parameter GPT, trained on 10M tokens for one epoch, Boost → Cut reaches held-out test loss
-**3.935 ± 0.012** (3 seeds) in 7.3 minutes on 8×H100. The Dust record reaches [pending: 3 seeds] in [pending]
-minutes (official log: validation 3.991 in 72 minutes), and Boost → Cut uses 24× fewer matrix FLOPs. From 7.3M to 243M
+**3.935 ± 0.012** (3 seeds) in 7.3 minutes on 8×H100. The Dust record reaches 3.999 ± 0.025 in 72 minutes on the same hardware, and Boost → Cut uses 24× fewer matrix FLOPs. From 7.3M to 243M
 parameters, Boost → Cut trails backprop by a roughly constant 0.23–0.26 nats [243M final configuration pending]. The
 On a plain GPT (GELU, no value embeddings or skip scalars), the route shortcut fails because GELU spreads each
 token's work over most units; with all units, the gap to backprop is 0.32 nats, at 2.0× the time. The stagewise head start is what concentrates credit onto few routes, which is why the route
@@ -65,7 +64,7 @@ interference and a full cycle of W probes per token per site suffices.
    - Scaling from 7.3M to 243M parameters, a second dataset, and a plain GPT.
 
 **Results in brief.** On the benchmark (Figure 1, Table 1):
-- Boost → Cut beats the Dust record by [pending] nats at about a tenth of the time.
+- Boost → Cut beats the Dust record by 0.063 nats (p = 0.032) in about a tenth of the time.
 - It beats both of its own phases run alone (by 0.049 and 0.127 nats; p = 0.007 and p < 0.001 over 3 seeds), and
   both forward-only baselines by a wide margin.
 - It trails backprop with the same optimizer by 0.23 nats.
@@ -210,7 +209,7 @@ and 175× at 243M.
 | **Boost → Cut** | **3.935 ± 0.012** | 3.946 ± 0.013 | 438 s |
 | Cut alone (no head start) | 3.984 ± 0.010 | 3.995 ± 0.009 | 503 s |
 | Boost alone | 4.062 ± 0.007 | 4.072 ± 0.006 | 342 s |
-| Dust record (16k population) | [pending] | [pending] (official log: 3.991) | [pending] (official: 4,303 s) |
+| Dust record (16k population) | 3.999 ± 0.025 | 4.009 ± 0.026 | 4,312 s |
 | local losses + forward gradient (128 directions) | 4.292 | 4.305 | 474 s |
 | direct feedback alignment (best of four learning rates) | 5.253 | 5.265 | 139 s |
 | backprop, same model, init and optimizer | 3.706 ± 0.009 | 3.712 ± 0.009 | 31 s |
@@ -227,7 +226,8 @@ backprop row uses the record's optimizer and is stronger.
 **Significance** (Welch's t-test on test loss over 3 seeds each):
 - **the head start:** Boost → Cut beats Cut alone by 0.049 (95% CI 0.023–0.074, p = 0.007);
 - **the end-to-end phase:** Boost → Cut beats Boost alone by 0.127 (95% CI 0.101–0.152, p < 0.001);
-- **against Dust:** [pending].
+- **against Dust:** Boost → Cut beats the Dust record by 0.063 (95% CI 0.011–0.116, p = 0.032). The record's own
+  log (val 3.991 in 4,303 s) matches our seed 0 (val 3.992 in 4,292 s).
 
 **Figure 1** (`fig_curves.png`): validation loss along the epoch for Boost → Cut, its two phases alone, the Dust
 record and backprop.
@@ -296,7 +296,7 @@ are nearly free after the head start, and the measurement costs about 0.04.
 | model | Boost → Cut | backprop (same optimizer) | gap | Dust (record recipe) |
 |---|---|---|---|---|
 | 7.3M (L4, d256) | 4.174 (115 s) | 3.915 (14 s) | 0.26 | [pending] |
-| 38M (L8, d512) | 3.935 ± 0.012 (438 s) | 3.706 ± 0.009 (31 s) | 0.23 | [pending] |
+| 38M (L8, d512) | 3.935 ± 0.012 (438 s) | 3.706 ± 0.009 (31 s) | 0.23 | 3.999 ± 0.025 (4,312 s) |
 | 243M (L16, d1024) | [pending, final configuration]; 3.888 with Boost's keys sampled (3,209 s) | 3.632 (67 s) | 0.26 | [pending, 4k population] |
 
 Boost → Cut follows backprop's scaling with a roughly constant gap. The Dust paper (with SGD) finds Dust worse at

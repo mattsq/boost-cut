@@ -378,6 +378,21 @@ CLAIMS += [
     ('Section 4.1: head start, Welch', 'Boost → Cut beats Cut alone by 0.049 (95% CI 0.023–0.074, p = 0.007)',
      lambda: (lambda d, ci, t, dof, p: f'Boost → Cut beats Cut alone by {-d:.3f} (95% CI {-ci[1]:.3f}–{-ci[0]:.3f}, '
                                          f'{pvalue(p)})')(*welch(field(BC, 'test_loss'), field(CUT, 'test_loss')))),
+    ('Section 4.1: against Dust, Welch', None,
+     lambda: (lambda d, ci, t, dof, p: f'Boost → Cut beats the Dust record by {-d:.3f} (95% CI {-ci[1]:.3f}–{-ci[0]:.3f}, '
+                                         f'{pvalue(p)})')(*welch(field(BC, 'test_loss'), field(DUST, 'test_loss')))),
+    ('Section 4.1: Dust seed 0 against its official log', None,
+     lambda: f"log (val {record_log('val')['val_loss']:.3f} in {record_log('val')['train_seconds']:,.0f} s) matches our seed 0 "
+             f"(val {result('dust38_s0')['val_loss']:.3f} in {result('dust38_s0')['train_seconds']:,.0f} s)"),
+    ('Abstract: Dust on the same hardware', None,
+     lambda: f"The Dust record reaches {pm(field(DUST, 'test_loss'))} in {mean(field(DUST, 'train_seconds')) / 60:.0f} minutes "
+             f"on the same hardware"),
+    ('Section 1: results in brief, Dust', None,
+     lambda: (lambda d, ci, t, dof, p: f'beats the Dust record by {-d:.3f} nats ({pvalue(p)}) in about a '
+              + ('tenth' if 0.08 < mean(field(BC, 'train_seconds')) / mean(field(DUST, 'train_seconds')) < 0.12 else '?')
+              + ' of the time')(*welch(field(BC, 'test_loss'), field(DUST, 'test_loss')))),
+    ('Table 3: 38M Dust', None,
+     lambda: f"| 0.23 | {pm(field(DUST, 'test_loss'))} ({secs(field(DUST, 'train_seconds'))}) |"),
     ('Section 4.1: end-to-end phase, Welch', 'Boost → Cut beats Boost alone by 0.127 (95% CI 0.101–0.152, p < 0.001)',
      lambda: (lambda d, ci, t, dof, p: f'Boost → Cut beats Boost alone by {-d:.3f} (95% CI {-ci[1]:.3f}–{-ci[0]:.3f}, '
                                          f'{pvalue(p)})')(*welch(field(BC, 'test_loss'), field(BOOST, 'test_loss')))),
