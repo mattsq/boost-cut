@@ -55,8 +55,9 @@ This does two checks:
 
 `ledger/verification.md` is its last report. `ledger/runs.json` ties each run to its command, data, checkpoint hash,
 code version and Modal app, and `ledger/compute.md` reconciles compute with Modal's billing; see
-[`ledger/README.md`](ledger/README.md). Checkpoints are not in the repository; their sha256 hashes are in
-`ledger/rescore.jsonl`.
+[`ledger/README.md`](ledger/README.md). The two entries' checkpoints are attached to the
+[entries-v1 release](https://github.com/spicylemonade/boost-cut/releases/tag/entries-v1); their sha256 hashes match
+`ledger/rescore.jsonl`, and `uv run utils/eval.py <file>` re-scores either one.
 
 ## Running an entry
 

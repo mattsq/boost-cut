@@ -43,7 +43,9 @@ scorer) also scores validation. `verification.md` lists each run.
 So far every re-scored checkpoint reproduces its logged losses to within 1e-7. Single-GPU and 8-GPU evaluation sum
 in different orders, which accounts for that residual.
 
-With the checkpoints in hand, anyone can repeat this:
+The two entries' checkpoints are attached to the repository's
+[entries-v1 release](https://github.com/spicylemonade/boost-cut/releases/tag/entries-v1). With a checkpoint in hand,
+anyone can repeat this:
 
 ```bash
 shasum -a 256 final.pt                                     # against rescore.jsonl
