@@ -436,6 +436,17 @@ CLAIMS += [
      lambda: f'The gap to backprop is {gap(["plain_bc38_kall"], ["plain_bp38_s0"]):.2f}, against {gap(BC, BP):.2f} on the '
              f'benchmark model, at {result("plain_bc38_kall")["train_seconds"] / result("plain_bc38_s0")["train_seconds"]:.1f}× '
              f'the time of\nthe routed run'),
+    ('Section 4.6: plain Dust row', None,
+     lambda: f'| Dust record recipe | {f3(result("plain_dust38_s0")["test_loss"])} | {f3(result("plain_dust38_s0")["val_loss"])} | '
+             f'{secs([result("plain_dust38_s0")["train_seconds"]])} |'),
+    ('Section 4.6: Dust loses ground too', None,
+     lambda: f'reaches {f3(result("plain_dust38_s0")["test_loss"])} on the plain GPT, with a gap to backprop of '
+             f'{gap(["plain_dust38_s0"], ["plain_bp38_s0"]):.2f}\nagainst {gap(DUST, BP):.2f} on the benchmark model. Boost → Cut '
+             f'with all units beats it by {result("plain_dust38_s0")["test_loss"] - result("plain_bc38_kall")["test_loss"]:.3f} in about a '
+             + ('quarter' if 0.2 < result('plain_bc38_kall')['train_seconds'] / result('plain_dust38_s0')['train_seconds'] < 0.3
+                else '?') + ' of its time'),
+    ('Abstract: plain GPT against Dust', None,
+     lambda: f'still beats Dust ({f3(result("plain_bc38_kall")["test_loss"])} against {f3(result("plain_dust38_s0")["test_loss"])})'),
     ('Section 8: plain GPT', None,
      lambda: f'it fails (gap {gap(["plain_bc38_s0"], ["plain_bp38_s0"]):.2f}), and\n  without it the gap is '
              f'{gap(["plain_bc38_kall"], ["plain_bp38_s0"]):.2f} at '

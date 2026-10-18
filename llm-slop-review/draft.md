@@ -24,7 +24,8 @@ On the benchmark's 38M-parameter GPT, trained on 10M tokens for one epoch, Boost
 **3.935 ± 0.012** (3 seeds) in 7.3 minutes on 8×H100. The Dust record reaches 3.999 ± 0.025 in 72 minutes on the same hardware, and Boost → Cut uses 24× fewer matrix FLOPs. From 7.3M to 243M
 parameters, Boost → Cut trails backprop by a roughly constant 0.23–0.26 nats [243M final configuration pending]. The
 On a plain GPT (GELU, no value embeddings or skip scalars), the route shortcut fails because GELU spreads each
-token's work over most units; with all units, the gap to backprop is 0.32 nats, at 2.0× the time. The stagewise head start is what concentrates credit onto few routes, which is why the route
+token's work over most units; with all units, the gap to backprop is 0.32 nats, at 2.0× the time, and Boost → Cut
+still beats Dust (4.224 against 4.367). The stagewise head start is what concentrates credit onto few routes, which is why the route
 restriction is nearly free:
 it costs 0.005 nats of exact-credit loss after the head start and 0.028 without it. Boost → Cut still uses about 136×
 backprop's FLOPs. An oracle with exact attention-cut credit puts 0.19 of its 0.23-nat gap to backprop on the
@@ -323,11 +324,14 @@ The gap to backprop is about half of FineWeb's.
 - **Kept:** pre-norm, the parameter-free RMS norm, rotary positions, QK-norm and the untied head. The model has 29M
   parameters.
 - **Method changes:** only the architecture-specific pieces. The routes rank units by |GELU(h)|·‖W_out[:, i]‖.
+- **Dust, adapted the same way:** GELU blocks and an uncapped head. Every hidden unit is jittered, because GELU has no
+  dead units.
 
 | plain GPT, seed 0 | test | val | time |
 |---|---|---|---|
 | Boost → Cut, top-128 routes | 4.560 | 4.573 | 475 s |
 | Boost → Cut, all 2,048 units | 4.224 | 4.240 | 938 s |
+| Dust record recipe | 4.367 | 4.383 | 3,633 s |
 | backprop, same optimizer | 3.909 | 3.916 | 23 s |
 
 **With the route shortcut, the method does not transfer.**
@@ -348,6 +352,9 @@ credit.
 **Without the shortcut, most of the loss comes back.** With all 2,048 units, Boost → Cut reaches test 4.224, and Cut
 improves at every evaluation. The gap to backprop is 0.32, against 0.23 on the benchmark model, at 2.0× the time of
 the routed run. The strong-route shortcut needs sparse activations; the rest of the method carries over.
+
+**Dust loses ground too.** The Dust record's recipe reaches 4.367 on the plain GPT, with a gap to backprop of 0.46
+against 0.29 on the benchmark model. Boost → Cut with all units beats it by 0.144 in about a quarter of its time.
 
 ## 5. Why strong routes, and why a head start
 

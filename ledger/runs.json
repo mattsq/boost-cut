@@ -1121,7 +1121,7 @@
   "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-kK0GP3dqXCJuHA6pKqYGVg",
   "start_pdt": "2026-10-17T23:42:36-07:00",
   "end_pdt": "2026-10-18T00:56:58-07:00",
-  "billed_h100_usd": 8.848,
+  "billed_h100_usd": 38.8153,
   "config": {
    "method": "dust_record",
    "arch": "noise",
@@ -4416,10 +4416,42 @@
   "name": "bc243f_s0",
   "table": "scale",
   "label": "243M Boost \u2192 Cut",
-  "modal_app_id": null,
-  "modal_app_url": null,
+  "modal_app_id": "ap-GfX3XSTw4O4Pnh26eWz2wu",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-GfX3XSTw4O4Pnh26eWz2wu",
+  "start_pdt": "2026-10-18T02:02:25-07:00",
+  "end_pdt": null,
+  "billed_h100_usd": 0.0,
+  "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc243f_s0 --preset 243m --seed 0 --chain-tokens 128 --key-chunk 4 --eval-every 488 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "b4a45f2db0bd6e6f9bbe24233940afb38e23a3187cc6f747634f9d03be03d357",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T09:03:05+00:00",
+   "end_utc": null,
+   "exit_code": null
+  },
   "code": {
-   "level": "unknown"
+   "level": "snapshot",
+   "where": "provenance/bc243f_s0/code.tar.gz (sha256 manifest in job.json)"
   }
  },
  "bp243_s0": {
@@ -4762,8 +4794,114 @@
   "modal_app_id": "ap-pUcwcRJ3b280ZjKbke2FGo",
   "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-pUcwcRJ3b280ZjKbke2FGo",
   "start_pdt": "2026-10-18T00:56:58-07:00",
-  "end_pdt": null,
-  "billed_h100_usd": 0.0,
+  "end_pdt": "2026-10-18T02:02:25-07:00",
+  "billed_h100_usd": 31.3542,
+  "config": {
+   "method": "dust_record",
+   "arch": "plain",
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "L"
+   },
+   "seed": 0,
+   "batch": 8,
+   "steps": 610,
+   "world": 8,
+   "recipe": {
+    "writers": [
+     256,
+     256,
+     256,
+     256,
+     256,
+     256,
+     256,
+     256
+    ],
+    "hidden": [
+     512,
+     512,
+     512,
+     512,
+     512,
+     512,
+     512,
+     512
+    ],
+    "hubs": [
+     512,
+     512,
+     512,
+     512,
+     512,
+     512,
+     512,
+     512
+    ],
+    "embedding": 2048,
+    "local": {
+     "q": 384,
+     "v": 384,
+     "gate": 128,
+     "k": 1664,
+     "ve": 4608
+    },
+    "nrep": 16,
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "gamma": 0.98,
+    "first_gamma": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25,
+    "memory_beta": 0.9,
+    "mesa_ridge": 0.1,
+    "alpha_beta": 0.8
+   }
+  },
+  "result": {
+   "val_loss": 4.383343847358928,
+   "train_seconds": 3633.32,
+   "steps": 610,
+   "test_loss": 4.3671158201554245
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/dust_preset.py --data-dir /data/data --output /data/runs/plain_dust38_s0 --preset 38m --seed 0 --arch plain --eval-every 61 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "b4a45f2db0bd6e6f9bbe24233940afb38e23a3187cc6f747634f9d03be03d357",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T08:00:32+00:00",
+   "end_utc": "2026-10-18T09:02:17+00:00",
+   "exit_code": 0
+  },
   "code": {
    "level": "snapshot",
    "where": "provenance/plain_dust38_s0/code.tar.gz (sha256 manifest in job.json)"
