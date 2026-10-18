@@ -988,6 +988,33 @@
    "end_utc": "2026-10-18T04:08:52+00:00",
    "exit_code": 0
   },
+  "rescore": {
+   "name": "dust38_s0",
+   "sha256": {
+    "final.pt": "143a10ad1e62dd2bca8ee709ad30186cf9eb5e50fa8ac2c77c356f7cf50469bb",
+    "config.json": "c6b4e0a4fe9d4f8e9cb2cf71596ae56782e8e579d82bdc888a9d2e118de85b88",
+    "result.json": "60326ac74b24430a6ff20d3048729fe58de95f38aa6f793a09df52996ebbbc98",
+    "metrics.jsonl": "2ec9cf763e0be605eb605cfc71de8e09a4212816087b2b4dfa88dbe448053b4e"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/dust_preset.py --data-dir /data/data --output /data/runs/dust38_s0 --preset 38m --seed 0 --eval-every 61 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.9919833838939667,
+    "test": 3.9819553704822765,
+    "train_seconds": 4292.06
+   },
+   "rescored": {
+    "val": 3.9919833365608666,
+    "test": 3.9819554370992325
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.9919833365608666
+  },
   "code": {
    "level": "snapshot",
    "where": "provenance/dust38_s0/code.tar.gz (sha256 manifest in job.json)"
@@ -1108,6 +1135,33 @@
    "end_utc": "2026-10-18T06:42:34+00:00",
    "exit_code": 0
   },
+  "rescore": {
+   "name": "dust38_s1",
+   "sha256": {
+    "final.pt": "d939f1a5861f12f4838118d13580f5e614902d9f50ba0fc08e80b5dd4d71a1b9",
+    "config.json": "c8edefe9eb74041bc691af9066ecfce29f8772399e64661f37102fccc956ba6f",
+    "result.json": "fead848b2e324f18155145e130b9e3fcb8acfb5d7967db54dc03ac7d8af38792",
+    "metrics.jsonl": "66096514bc52658a5d8b1e21c6d6c2661f2ff605525fd508bab5458a0a14ef10"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/dust_preset.py --data-dir /data/data --output /data/runs/dust38_s1 --preset 38m --seed 1 --eval-every 61 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 3.99669969607802,
+    "test": 3.9861900087665108,
+    "train_seconds": 4329.83
+   },
+   "rescored": {
+    "val": 3.9966996908187866,
+    "test": 3.986190010519589
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 3.9966996908187866
+  },
   "code": {
    "level": "snapshot",
    "where": "provenance/dust38_s1/code.tar.gz (sha256 manifest in job.json)"
@@ -1227,6 +1281,33 @@
    "start_utc": "2026-10-18T06:43:15+00:00",
    "end_utc": "2026-10-18T07:56:52+00:00",
    "exit_code": 0
+  },
+  "rescore": {
+   "name": "dust38_s2",
+   "sha256": {
+    "final.pt": "494eac055de9f1602655047ddf00b83a927785539e8004107ece984343deb36d",
+    "config.json": "9ff32c108c9553e7efd9edf3b0fa210ed82d96209de130660b0ec9acbd802e35",
+    "result.json": "c4b6ab00185d65d1bd2f069094e72ae8528416c923d18b43d44fda421dfe48ab",
+    "metrics.jsonl": "43501d964c1d55716ac3068991366be4b259a2b0c0738bb366a07c859f23f649"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/dust_preset.py --data-dir /data/data --output /data/runs/dust38_s2 --preset 38m --seed 2 --eval-every 61 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 4.038913113229415,
+    "test": 4.027518703657038,
+    "train_seconds": 4314.55
+   },
+   "rescored": {
+    "val": 4.0389130746617035,
+    "test": 4.027518693138571
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 4.0389130746617035
   },
   "code": {
    "level": "snapshot",
@@ -4301,10 +4382,134 @@
   "name": "dust7_s0",
   "table": "scale",
   "label": "7.3M Dust",
-  "modal_app_id": null,
-  "modal_app_url": null,
+  "modal_app_id": "ap-h16PArYnWiHPa8KXpzb85O",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-h16PArYnWiHPa8KXpzb85O",
+  "start_pdt": "2026-10-18T03:00:46-07:00",
+  "end_pdt": "2026-10-18T03:18:49-07:00",
+  "billed_h100_usd": 9.1816,
+  "config": {
+   "method": "dust_record",
+   "arch": "noise",
+   "preset": "7m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 4,
+    "n_head": 4,
+    "n_kv_head": 4,
+    "n_embd": 256,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "batch": 8,
+   "steps": 610,
+   "world": 8,
+   "recipe": {
+    "writers": [
+     256,
+     256,
+     256,
+     256
+    ],
+    "hidden": [
+     512,
+     512,
+     512,
+     512
+    ],
+    "hubs": [
+     512,
+     512,
+     512,
+     512
+    ],
+    "embedding": 2048,
+    "local": {
+     "q": 384,
+     "v": 384,
+     "gate": 128,
+     "k": 1664,
+     "ve": 4608
+    },
+    "nrep": 16,
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "gamma": 0.98,
+    "first_gamma": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25,
+    "memory_beta": 0.9,
+    "mesa_ridge": 0.1,
+    "alpha_beta": 0.8
+   }
+  },
+  "result": {
+   "val_loss": 4.201831014717326,
+   "train_seconds": 963.79,
+   "steps": 610,
+   "test_loss": 4.1932783126831055
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/dust_preset.py --data-dir /data/data --output /data/runs/dust7_s0 --preset 7m --seed 0 --eval-every 61 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "b4a45f2db0bd6e6f9bbe24233940afb38e23a3187cc6f747634f9d03be03d357",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T10:01:25+00:00",
+   "end_utc": "2026-10-18T10:18:47+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "dust7_s0",
+   "sha256": {
+    "final.pt": "4779461bbed77ec4120de78bdce45de6dc66e3aa5459be5491eafba73d1a525f",
+    "config.json": "dbd5a46c7944c624893a78457aedfac28197b04f0ef502096076f256374c0bb2",
+    "result.json": "edf19bfe875e5d2b31a3babef86dfbf0dfd6e9536e34016043f51466f429a880",
+    "metrics.jsonl": "db63a39cf96330f26e696be239a68c04fd6b04e5dbea0a62e25c085d71f5dc35"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/dust_preset.py --data-dir /data/data --output /data/runs/dust7_s0 --preset 7m --seed 0 --eval-every 61 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 7340296,
+   "logged": {
+    "val": 4.201831014717326,
+    "test": 4.1932783126831055,
+    "train_seconds": 963.79
+   },
+   "rescored": {
+    "val": 4.201831116395838,
+    "test": 4.193278284633861
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   }
+  },
   "code": {
-   "level": "unknown"
+   "level": "snapshot",
+   "where": "provenance/dust7_s0/code.tar.gz (sha256 manifest in job.json)"
   }
  },
  "bc243_s0": {
@@ -4419,8 +4624,73 @@
   "modal_app_id": "ap-GfX3XSTw4O4Pnh26eWz2wu",
   "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-GfX3XSTw4O4Pnh26eWz2wu",
   "start_pdt": "2026-10-18T02:02:25-07:00",
-  "end_pdt": null,
-  "billed_h100_usd": 0.0,
+  "end_pdt": "2026-10-18T03:00:46-07:00",
+  "billed_h100_usd": 30.3887,
+  "config": {
+   "script": "/root/noise/train/boostcut/run.py",
+   "world": 8,
+   "preset": "243m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 16,
+    "n_head": 16,
+    "n_kv_head": 16,
+    "n_embd": 1024,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "switch": 0.3,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "boost_batch": 4,
+   "cut_batch": 8,
+   "train_file": "train.pt",
+   "train_rows": 4880,
+   "recipe": {
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25
+   },
+   "settings": {
+    "sigma": 0.005,
+    "probes": 0,
+    "fc_k": 512,
+    "fc_sigma": 0.05,
+    "local": {
+     "q": 64,
+     "k": 320,
+     "v": 512,
+     "gate": 64
+    },
+    "nrep": 64,
+    "emb_chunk": 16,
+    "scalar_step": 0.01,
+    "chunk": 134217728,
+    "boost_exact_keys": true,
+    "chain_sigma": 0.01,
+    "route_k": 256,
+    "chain_tokens": 128,
+    "cut_exact_keys": true,
+    "key_sigma": 0.003,
+    "key_chunk": 4
+   },
+   "polar_margin": 1.1,
+   "torch_version": "2.10.0+cu128"
+  },
+  "result": {
+   "val_loss": 3.902412630179349,
+   "train_seconds": 3218.25,
+   "boost_steps": 366,
+   "cut_steps": 427,
+   "tokens": 9994240,
+   "test_loss": 3.893489525598638
+  },
   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc243f_s0 --preset 243m --seed 0 --chain-tokens 128 --key-chunk 4 --eval-every 488 --test-file test.pt",
   "provenance": {
    "code_sha256": "b4a45f2db0bd6e6f9bbe24233940afb38e23a3187cc6f747634f9d03be03d357",
@@ -4446,8 +4716,34 @@
    "cuda": "12.8",
    "python": "3.12.10",
    "start_utc": "2026-10-18T09:03:05+00:00",
-   "end_utc": null,
-   "exit_code": null
+   "end_utc": "2026-10-18T10:00:31+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "bc243f_s0",
+   "sha256": {
+    "final.pt": "0858d8980bd6f4ce91fab083360a68a45612233e82d09cd1b1cab27b4383856a",
+    "config.json": "4e3b42963821caa771fee0c779d245bb3b03589e743c12142424e1d3ba984a84",
+    "result.json": "54dea1f4ab6418897c2a58f4df4e30ea3697c230be3172125b98d3fb88dd44e2",
+    "metrics.jsonl": "b193644baca7a729fb4b8ac2fee6be7e4166722c753d6eb5e3c115a354d28b05"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 train/boostcut/run.py --data-dir /data/data --output /data/runs/bc243f_s0 --preset 243m --seed 0 --chain-tokens 128 --key-chunk 4 --eval-every 488 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 243273760,
+   "logged": {
+    "val": 3.902412630179349,
+    "test": 3.893489525598638,
+    "train_seconds": 3218.25
+   },
+   "rescored": {
+    "val": 3.9024126179078045,
+    "test": 3.8934895080678604
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   }
   },
   "code": {
    "level": "snapshot",
@@ -4533,20 +4829,317 @@
   "name": "dust38_p4k",
   "table": "scale",
   "label": "38M Dust, 4k population",
-  "modal_app_id": null,
-  "modal_app_url": null,
+  "modal_app_id": "ap-ddRdeQTc6bgvj6Smxn5ffE",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-ddRdeQTc6bgvj6Smxn5ffE",
+  "start_pdt": "2026-10-18T03:18:49-07:00",
+  "end_pdt": "2026-10-18T03:41:18-07:00",
+  "billed_h100_usd": 12.0659,
+  "config": {
+   "method": "dust_record",
+   "arch": "noise",
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "batch": 8,
+   "steps": 610,
+   "world": 8,
+   "recipe": {
+    "writers": [
+     64,
+     64,
+     64,
+     64,
+     64,
+     64,
+     64,
+     64
+    ],
+    "hidden": [
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128
+    ],
+    "hubs": [
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128
+    ],
+    "embedding": 512,
+    "local": {
+     "q": 128,
+     "v": 128,
+     "gate": 64,
+     "k": 384,
+     "ve": 1152
+    },
+    "nrep": 16,
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "gamma": 0.98,
+    "first_gamma": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25,
+    "memory_beta": 0.9,
+    "mesa_ridge": 0.1,
+    "alpha_beta": 0.8
+   }
+  },
+  "result": {
+   "val_loss": 4.2043560287531685,
+   "train_seconds": 1194.23,
+   "steps": 610,
+   "test_loss": 4.19391692385954
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/dust_preset.py --data-dir /data/data --output /data/runs/dust38_p4k --preset 38m --seed 0 --scale 0.25 --eval-every 61 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "b4a45f2db0bd6e6f9bbe24233940afb38e23a3187cc6f747634f9d03be03d357",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T10:19:29+00:00",
+   "end_utc": "2026-10-18T10:41:05+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "dust38_p4k",
+   "sha256": {
+    "final.pt": "0648a07f809b468ba46438ae26929865d96cfb629e5b58d8585c7dd354a2ccde",
+    "config.json": "5e71623c1eaa10e8f8c53cf470f18f3d5a6862be6e3dec87436118ea983c32b1",
+    "result.json": "c6ae0ba00e0f0d912099e92d648397db6821eda6b5f26ab4b1f497ea2f2895ea",
+    "metrics.jsonl": "0b4e36dd51a268ecc621fc6203a54113ac042aeeb9487a9d439b87b00af101fe"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/dust_preset.py --data-dir /data/data --output /data/runs/dust38_p4k --preset 38m --seed 0 --scale 0.25 --eval-every 61 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 37749776,
+   "logged": {
+    "val": 4.2043560287531685,
+    "test": 4.19391692385954,
+    "train_seconds": 1194.23
+   },
+   "rescored": {
+    "val": 4.204356081345502,
+    "test": 4.193916909834918
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   },
+   "official_val": 4.204356081345502
+  },
   "code": {
-   "level": "unknown"
+   "level": "snapshot",
+   "where": "provenance/dust38_p4k/code.tar.gz (sha256 manifest in job.json)"
   }
  },
  "dust243_p4k": {
   "name": "dust243_p4k",
   "table": "scale",
   "label": "243M Dust, 4k population",
-  "modal_app_id": null,
-  "modal_app_url": null,
+  "modal_app_id": "ap-HF7oGbnUQFZUDYxMQRgd7Q",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-HF7oGbnUQFZUDYxMQRgd7Q",
+  "start_pdt": "2026-10-18T03:41:18-07:00",
+  "end_pdt": "2026-10-18T05:43:37-07:00",
+  "billed_h100_usd": 64.1304,
+  "config": {
+   "method": "dust_record",
+   "arch": "noise",
+   "preset": "243m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 16,
+    "n_head": 16,
+    "n_kv_head": 16,
+    "n_embd": 1024,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "batch": 8,
+   "steps": 610,
+   "world": 8,
+   "recipe": {
+    "writers": [
+     64,
+     64,
+     64,
+     64,
+     64,
+     64,
+     64,
+     64,
+     64,
+     64,
+     64,
+     64,
+     64,
+     64,
+     64,
+     64
+    ],
+    "hidden": [
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128
+    ],
+    "hubs": [
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128,
+     128
+    ],
+    "embedding": 512,
+    "local": {
+     "q": 128,
+     "v": 128,
+     "gate": 64,
+     "k": 384,
+     "ve": 1152
+    },
+    "nrep": 16,
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "gamma": 0.98,
+    "first_gamma": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25,
+    "memory_beta": 0.9,
+    "mesa_ridge": 0.1,
+    "alpha_beta": 0.8
+   }
+  },
+  "result": {
+   "val_loss": 4.201795967186198,
+   "train_seconds": 7062.48,
+   "steps": 610,
+   "test_loss": 4.187545913107255
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/dust_preset.py --data-dir /data/data --output /data/runs/dust243_p4k --preset 243m --seed 0 --scale 0.25 --eval-every 61 --test-file test.pt",
+  "provenance": {
+   "code_sha256": "b4a45f2db0bd6e6f9bbe24233940afb38e23a3187cc6f747634f9d03be03d357",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB",
+    "NVIDIA H100 80GB HBM3, 610.57.04, 81559 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T10:43:20+00:00",
+   "end_utc": "2026-10-18T12:43:13+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "dust243_p4k",
+   "sha256": {
+    "final.pt": "4b9c36212701ec62a230abfbae462ee068cf62a32a42f9d6e67849bc1b278451",
+    "config.json": "a25b912c68e087c25f30a2749f8ffecdbe9f76c8db52767815b172aa0dd13ca5",
+    "result.json": "bdd132ba22af7d328295da95e22182b17c9539188cc197b90919376280f7218d",
+    "metrics.jsonl": "49603eede496cef8881a7ce6a1303839c40ca7710a002880947cfe7c1357f97d"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/dust_preset.py --data-dir /data/data --output /data/runs/dust243_p4k --preset 243m --seed 0 --scale 0.25 --eval-every 61 --test-file test.pt",
+   "arch": "noise",
+   "data_dir": "/data/data",
+   "params": 243273760,
+   "logged": {
+    "val": 4.201795967186198,
+    "test": 4.187545913107255,
+    "train_seconds": 7062.48
+   },
+   "rescored": {
+    "val": 4.201795900569243,
+    "test": 4.187545944662655
+   },
+   "split_token_sha256": {
+    "val": "5fdb9242ce8ab83e519ab5dd5cf8d64f4d8a99f6e74c137f4ca0f723da5f7437",
+    "test": "cb7a29f079ae2de5e96dd472497b67a6ec3c827bf6efbd8c263c7ab1001f6d7d"
+   }
+  },
   "code": {
-   "level": "unknown"
+   "level": "snapshot",
+   "where": "provenance/dust243_p4k/code.tar.gz (sha256 manifest in job.json)"
   }
  },
  "plain_bc38_s0": {
@@ -4795,7 +5388,7 @@
   "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-pUcwcRJ3b280ZjKbke2FGo",
   "start_pdt": "2026-10-18T00:56:58-07:00",
   "end_pdt": "2026-10-18T02:02:25-07:00",
-  "billed_h100_usd": 31.3542,
+  "billed_h100_usd": 32.6182,
   "config": {
    "method": "dust_record",
    "arch": "plain",
@@ -5427,10 +6020,146 @@
   "name": "dustts_s0",
   "table": "tinystories",
   "label": "Dust record",
-  "modal_app_id": null,
-  "modal_app_url": null,
+  "modal_app_id": "ap-6r6xj2Cf8qcof6HyP33iO3",
+  "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-6r6xj2Cf8qcof6HyP33iO3",
+  "start_pdt": "2026-10-18T05:43:37-07:00",
+  "end_pdt": "2026-10-18T06:54:57-07:00",
+  "billed_h100_usd": 7.5664,
+  "config": {
+   "method": "dust_record",
+   "arch": "noise",
+   "preset": "38m",
+   "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 8,
+    "n_head": 8,
+    "n_kv_head": 8,
+    "n_embd": 512,
+    "window_pattern": "SSSL"
+   },
+   "seed": 0,
+   "batch": 8,
+   "steps": 610,
+   "world": 8,
+   "recipe": {
+    "writers": [
+     256,
+     256,
+     256,
+     256,
+     256,
+     256,
+     256,
+     256
+    ],
+    "hidden": [
+     512,
+     512,
+     512,
+     512,
+     512,
+     512,
+     512,
+     512
+    ],
+    "hubs": [
+     512,
+     512,
+     512,
+     512,
+     512,
+     512,
+     512,
+     512
+    ],
+    "embedding": 2048,
+    "local": {
+     "q": 384,
+     "v": 384,
+     "gate": 128,
+     "k": 1664,
+     "ve": 4608
+    },
+    "nrep": 16,
+    "lr": 0.003,
+    "betas": [
+     0.7,
+     0.95
+    ],
+    "warmdown": 0.3,
+    "gamma": 0.98,
+    "first_gamma": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25,
+    "memory_beta": 0.9,
+    "mesa_ridge": 0.1,
+    "alpha_beta": 0.8
+   }
+  },
+  "result": {
+   "val_loss": 1.719761319896754,
+   "train_seconds": 4049.14,
+   "steps": 610,
+   "test_loss": 1.668383100453545
+  },
+  "command": "torchrun --standalone --nproc_per_node=8 analysis/dust_preset.py --data-dir /data/data --output /data/runs/dustts_s0 --preset 38m --seed 0 --eval-every 61 --test-file test.pt --data-dir /data/tinystories",
+  "provenance": {
+   "code_sha256": "b4a45f2db0bd6e6f9bbe24233940afb38e23a3187cc6f747634f9d03be03d357",
+   "data_files": {
+    "/data/data/test.pt": "cf7185682b3cae85d35024890f94fe6dd8192cad9122815a43fcccb6e61b9483",
+    "/data/data/train.pt": "79132bfff01520e085076e1937e3de8897570b643a49de17bdba61bced8fe35d",
+    "/data/data/val.pt": "8d123afe426b7789a47e7959a17f912ee58436941fa02e32bf4662373cf1e52c",
+    "/data/tinystories/test.pt": "f36b2adfa917500bd4aafaae1e4769f677f2d72c7f442b2fadb17ef8ef1a682f",
+    "/data/tinystories/train.pt": "44332ca0b979d04a684f12e183f5f20ec797a9f3cf0479fa4612e2672c577f6b",
+    "/data/tinystories/val.pt": "83b37289c037054f076ee56d9c7ff75777d8d7bf8aff5b7b6d45ba2170ca769b"
+   },
+   "gpus": [
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB",
+    "NVIDIA H200, 610.57.04, 143771 MiB"
+   ],
+   "torch": "2.10.0+cu128",
+   "cuda": "12.8",
+   "python": "3.12.10",
+   "start_utc": "2026-10-18T12:45:41+00:00",
+   "end_utc": "2026-10-18T13:54:53+00:00",
+   "exit_code": 0
+  },
+  "rescore": {
+   "name": "dustts_s0",
+   "sha256": {
+    "final.pt": "be08a38a1e42bc2dd4b262f1fa77e3596ec1aa978df76f7ca4584f7b90fa69d8",
+    "config.json": "82a195947fe8156b22da60e3e34eae54034d767174c05cead63535fabb9c40e2",
+    "result.json": "5957ba3b7cb417ee1e2e98c6fa6597483aafb9385193ddef1090f1cdc8441592",
+    "metrics.jsonl": "70ea95604999ea2a7483f13859d07a441d95b2f34b94f37fc8a8ceaf3159b5c9"
+   },
+   "command": "torchrun --standalone --nproc_per_node=8 analysis/dust_preset.py --data-dir /data/data --output /data/runs/dustts_s0 --preset 38m --seed 0 --eval-every 61 --test-file test.pt --data-dir /data/tinystories",
+   "arch": "noise",
+   "data_dir": "/data/tinystories",
+   "params": 37749776,
+   "logged": {
+    "val": 1.719761319896754,
+    "test": 1.668383100453545,
+    "train_seconds": 4049.14
+   },
+   "rescored": {
+    "val": 1.7197613365509932,
+    "test": 1.6683831109720118
+   },
+   "split_token_sha256": {
+    "val": "027a8acc68f4ba540c8b958386fe09b986502bb5031accb797f616f158e864b1",
+    "test": "ce6fdc1b59c4b7f506fb29587fc0c807bae194fdd4d078f35d190fa47342ec4d"
+   }
+  },
   "code": {
-   "level": "unknown"
+   "level": "snapshot",
+   "where": "provenance/dustts_s0/code.tar.gz (sha256 manifest in job.json)"
   }
  },
  "oracle_hybrid": {

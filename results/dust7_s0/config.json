@@ -1,0 +1,60 @@
+{
+  "method": "dust_record",
+  "arch": "noise",
+  "preset": "7m",
+  "model": {
+    "sequence_len": 2048,
+    "vocab_size": 4096,
+    "n_layer": 4,
+    "n_head": 4,
+    "n_kv_head": 4,
+    "n_embd": 256,
+    "window_pattern": "SSSL"
+  },
+  "seed": 0,
+  "batch": 8,
+  "steps": 610,
+  "world": 8,
+  "recipe": {
+    "writers": [
+      256,
+      256,
+      256,
+      256
+    ],
+    "hidden": [
+      512,
+      512,
+      512,
+      512
+    ],
+    "hubs": [
+      512,
+      512,
+      512,
+      512
+    ],
+    "embedding": 2048,
+    "local": {
+      "q": 384,
+      "v": 384,
+      "gate": 128,
+      "k": 1664,
+      "ve": 4608
+    },
+    "nrep": 16,
+    "lr": 0.003,
+    "betas": [
+      0.7,
+      0.95
+    ],
+    "warmdown": 0.3,
+    "gamma": 0.98,
+    "first_gamma": 0.3,
+    "anvil_lr": 0.023,
+    "anvil_wd": 2.25,
+    "memory_beta": 0.9,
+    "mesa_ridge": 0.1,
+    "alpha_beta": 0.8
+  }
+}

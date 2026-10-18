@@ -124,7 +124,7 @@ def fig_time():
         ('Cut alone', ['bc38_sw0', 'bc38_sw0_s1', 'bc38_sw0_s2'], CUT, (6, 4)),
         ('Boost alone', [f'bc38f_sw100_s{s}' for s in range(3)], BOOST, (-6, 0)),
         ('local losses + forward gradient', ['bc38_fg128'], FG, (-6, 0)),
-        ('direct feedback alignment', ['bc38_dfa'], DFA, (-6, 0)),
+        ('direct feedback alignment (best rate)', ['bc38_dfa_lr0.1'], DFA, (6, 0)),
         ('Dust record', [f'dust38_s{s}' for s in range(3)], DUST, (-6, 0)),
         ('backprop', [f'bp38_s{s}' for s in range(3)], BACKPROP, (6, 0)),
     ]

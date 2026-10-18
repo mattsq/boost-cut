@@ -356,8 +356,8 @@ CLAIMS += [
      lambda: f'| 38M (L8, d512) | {pm(field(BC, "test_loss"))} ({secs(field(BC, "train_seconds"))}) | '
              f'{pm(field(BP, "test_loss"))} ({secs(field(BP, "train_seconds"))}) | {gap(BC, BP):.2f} |'),
     ('Table 3: 243M backprop', '| 3.632 (67 s) |', lambda: f'| {f3(result("bp243_s0")["test_loss"])} ({result("bp243_s0")["train_seconds"]:.0f} s) |'),
-    ("Table 3: 243M, Boost's keys sampled", "3.888 with Boost's keys sampled (3,209 s)",
-     lambda: f"{f3(result('bc243_s0')['test_loss'])} with Boost's keys sampled ({result('bc243_s0')['train_seconds']:,.0f} s)"),
+    ("Table 3: 243M, Boost's keys sampled", None,
+     lambda: f"the 243M run reaches {f3(result('bc243_s0')['test_loss'])} ({result('bc243_s0')['train_seconds']:,.0f} s)"),
     ('Section 4.6: TinyStories Boost → Cut', '| Boost → Cut | 1.633 | 1.685 |',
      lambda: f'| Boost → Cut | {f3(result("bcts_s0")["test_loss"])} | {f3(result("bcts_s0")["val_loss"])} |'),
     ('Section 4.6: TinyStories backprop', '| backprop | 1.508 | 1.558 |',
@@ -422,7 +422,7 @@ CLAIMS += [
     ('Section 4.6 and 8: plain gap', None,
      lambda: f'gap to backprop grows from {gap(BC, BP):.2f} to {gap(["plain_bc38_s0"], ["plain_bp38_s0"]):.2f}'),
     ('Abstract: plain GPT without the shortcut', None,
-     lambda: f'with all units, the gap to backprop is {gap(["plain_bc38_kall"], ["plain_bp38_s0"]):.2f} nats, at '
+     lambda: f'With all units, the gap to backprop is {gap(["plain_bc38_kall"], ["plain_bp38_s0"]):.2f} nats, at '
              f'{result("plain_bc38_kall")["train_seconds"] / result("plain_bc38_s0")["train_seconds"]:.1f}× the time'),
     ('Section 4.6: plain all-units row', None,
      lambda: f'| Boost → Cut, all 2,048 units | {f3(result("plain_bc38_kall")["test_loss"])} | '
@@ -447,6 +447,27 @@ CLAIMS += [
                 else '?') + ' of its time'),
     ('Abstract: plain GPT against Dust', None,
      lambda: f'still beats Dust ({f3(result("plain_bc38_kall")["test_loss"])} against {f3(result("plain_dust38_s0")["test_loss"])})'),
+    ('Table 3: 7.3M Dust', None, lambda: f"| 0.26 | {f3(result('dust7_s0')['test_loss'])} ({secs([result('dust7_s0')['train_seconds']])}) | – |"),
+    ('Table 3: 38M Dust, 4k', None,
+     lambda: f"({secs(field(DUST, 'train_seconds'))}) | {f3(result('dust38_p4k')['test_loss'])} ({secs([result('dust38_p4k')['train_seconds']])}) |"),
+    ('Table 3: 243M row', None,
+     lambda: f"| 243M (L16, d1024) | {f3(result('bc243f_s0')['test_loss'])} ({secs([result('bc243f_s0')['train_seconds']])}) | "
+             f"{f3(result('bp243_s0')['test_loss'])} ({secs([result('bp243_s0')['train_seconds']])}) | "
+             f"{gap(['bc243f_s0'], ['bp243_s0']):.2f} | – | {f3(result('dust243_p4k')['test_loss'])} "
+             f"({secs([result('dust243_p4k')['train_seconds']])}) |"),
+    ('Section 4.5: gaps across sizes', None,
+     lambda: f"roughly constant gap: {gap(['bc7_s0'], ['bp7_s0']):.2f}, {gap(BC, BP):.2f} and {gap(['bc243f_s0'], ['bp243_s0']):.2f}"),
+    ('Abstract: gap range across sizes', None,
+     lambda: (lambda g: f'trails backprop by a roughly constant {min(g):.2f}–{max(g):.2f} nats')(
+         [gap(['bc7_s0'], ['bp7_s0']), gap(BC, BP), gap(['bc243f_s0'], ['bp243_s0'])])),
+    ('Section 4.5: Dust at a fixed population', None,
+     lambda: f"{f3(result('dust38_p4k')['test_loss'])} at 38M and {f3(result('dust243_p4k')['test_loss'])} at 243M. Over the same step,\n"
+             f"  backprop gains {mean(field(BP, 'test_loss')) - result('bp243_s0')['test_loss']:.3f} and Boost → Cut "
+             f"{mean(field(BC, 'test_loss')) - result('bc243f_s0')['test_loss']:.3f}"),
+    ('Section 4.6: TinyStories Dust', None,
+     lambda: f"| Dust record | {f3(result('dustts_s0')['test_loss'])} | {f3(result('dustts_s0')['val_loss'])} |"),
+    ('Section 4.6: TinyStories margin over Dust', None,
+     lambda: f"Boost → Cut beats Dust here too, by {result('dustts_s0')['test_loss'] - result('bcts_s0')['test_loss']:.3f}"),
     ('Section 8: plain GPT', None,
      lambda: f'it fails (gap {gap(["plain_bc38_s0"], ["plain_bp38_s0"]):.2f}), and\n  without it the gap is '
              f'{gap(["plain_bc38_kall"], ["plain_bp38_s0"]):.2f} at '
