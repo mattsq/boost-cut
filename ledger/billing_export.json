@@ -994,6 +994,34 @@
   "cost": "0.12309945"
  },
  {
+  "object_id": "ap-6r6xj2Cf8qcof6HyP33iO3",
+  "environment": "main",
+  "interval_start": "2026-10-18T13:00:00",
+  "resource": "CPU",
+  "cost": "0.36536971"
+ },
+ {
+  "object_id": "ap-6r6xj2Cf8qcof6HyP33iO3",
+  "environment": "main",
+  "interval_start": "2026-10-18T13:00:00",
+  "resource": "H100",
+  "cost": "28.93155533"
+ },
+ {
+  "object_id": "ap-6r6xj2Cf8qcof6HyP33iO3",
+  "environment": "main",
+  "interval_start": "2026-10-18T13:00:00",
+  "resource": "Network Egress",
+  "cost": "5E-8"
+ },
+ {
+  "object_id": "ap-6r6xj2Cf8qcof6HyP33iO3",
+  "environment": "main",
+  "interval_start": "2026-10-18T13:00:00",
+  "resource": "Memory",
+  "cost": "0.46876444"
+ },
+ {
   "object_id": "ap-7Fo1gNQSE3noZ5V3v913Xy",
   "environment": "main",
   "interval_start": "2026-10-17T13:00:00",
@@ -1522,15 +1550,15 @@
   "object_id": "ap-9oEXPWktsxgag5Q2nKd3wJ",
   "environment": "main",
   "interval_start": "2026-10-17T23:00:00",
-  "resource": "Network Egress",
-  "cost": "0.00004919"
+  "resource": "Memory",
+  "cost": "0.00963285"
  },
  {
   "object_id": "ap-9oEXPWktsxgag5Q2nKd3wJ",
   "environment": "main",
   "interval_start": "2026-10-17T23:00:00",
-  "resource": "Memory",
-  "cost": "0.00963285"
+  "resource": "Network Egress",
+  "cost": "0.00004919"
  },
  {
   "object_id": "ap-9vVVt3F2MaAlCzCDvv9oSg",
@@ -3127,6 +3155,27 @@
   "interval_start": "2026-10-17T22:00:00",
   "resource": "Memory",
   "cost": "0.00855300"
+ },
+ {
+  "object_id": "ap-KCbWOoSwClXSL1kWoa7V7a",
+  "environment": "main",
+  "interval_start": "2026-10-18T13:00:00",
+  "resource": "CPU",
+  "cost": "0.00072165"
+ },
+ {
+  "object_id": "ap-KCbWOoSwClXSL1kWoa7V7a",
+  "environment": "main",
+  "interval_start": "2026-10-18T13:00:00",
+  "resource": "H100",
+  "cost": "0.08777822"
+ },
+ {
+  "object_id": "ap-KCbWOoSwClXSL1kWoa7V7a",
+  "environment": "main",
+  "interval_start": "2026-10-18T13:00:00",
+  "resource": "Memory",
+  "cost": "0.01137783"
  },
  {
   "object_id": "ap-KGJNKi1mPIzu89gYJhpn6x",
@@ -5239,15 +5288,15 @@
   "object_id": "ap-b6Jlooik2n2P3RYzcm5KTE",
   "environment": "main",
   "interval_start": "2026-10-17T03:00:00",
-  "resource": "Network Egress",
-  "cost": "0.00091171"
+  "resource": "Memory",
+  "cost": "0.00891346"
  },
  {
   "object_id": "ap-b6Jlooik2n2P3RYzcm5KTE",
   "environment": "main",
   "interval_start": "2026-10-17T03:00:00",
-  "resource": "Memory",
-  "cost": "0.00891346"
+  "resource": "Network Egress",
+  "cost": "0.00091171"
  },
  {
   "object_id": "ap-bE7snmd59eTzzdGa0CExB2",
@@ -5533,15 +5582,15 @@
   "object_id": "ap-e9wSCOC2fHoTUOHx670cCQ",
   "environment": "main",
   "interval_start": "2026-10-17T19:00:00",
-  "resource": "Network Egress",
-  "cost": "0.00009478"
+  "resource": "Memory",
+  "cost": "0.00554667"
  },
  {
   "object_id": "ap-e9wSCOC2fHoTUOHx670cCQ",
   "environment": "main",
   "interval_start": "2026-10-17T19:00:00",
-  "resource": "Memory",
-  "cost": "0.00554667"
+  "resource": "Network Egress",
+  "cost": "0.00009478"
  },
  {
   "object_id": "ap-eYoiseDO4LuK9Bbb1OPrIM",

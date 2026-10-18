@@ -405,8 +405,8 @@ every checkpoint.
 
   The forward-only phases use about 4.4× backprop's memory. The probe batches set it: their chunk size
   (2²⁷ elements) trades memory for speed.
-- **The whole study**, including development, used about [pending] H100-hours on Modal, of which [pending] were for
-  this paper's runs.
+- **The whole study**, including development, used 237 H100-hours on Modal ($970 billed in total), of which 135
+  were for this paper's runs (`ledger/compute.md`).
 
 ## 7. Related work
 

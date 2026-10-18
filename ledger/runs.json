@@ -6024,7 +6024,7 @@
   "modal_app_url": "https://modal.com/apps/<workspace>/main/ap-6r6xj2Cf8qcof6HyP33iO3",
   "start_pdt": "2026-10-18T05:43:37-07:00",
   "end_pdt": "2026-10-18T06:54:57-07:00",
-  "billed_h100_usd": 7.5664,
+  "billed_h100_usd": 36.498,
   "config": {
    "method": "dust_record",
    "arch": "noise",

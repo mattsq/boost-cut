@@ -197,6 +197,17 @@ def gap(bc_runs, bp_runs):
     return mean(field(bc_runs, 'test_loss')) - mean(field(bp_runs, 'test_loss'))
 
 
+def compute_claim():
+    """Total H100-hours and dollars from Modal's billing export, and the paper's jobs from jobs.csv (at $3.95/H100-hour)."""
+    import csv
+    billing = json.loads((HERE / 'billing_export.json').read_text())
+    h100 = sum(float(r['cost']) for r in billing if r['resource'] == 'H100')
+    total = sum(float(r['cost']) for r in billing)
+    paper = sum(float(r['billed_h100_usd']) for r in csv.DictReader((HERE / 'jobs.csv').open()) if r['phase'] == 'paper')
+    return (f'used {h100 / 3.95:.0f} H100-hours on Modal (${total:,.0f} billed in total), of which {paper / 3.95:.0f}\n'
+            f"  were for this paper's runs")
+
+
 def mech():
     """analysis/clean_probe.py's records per checkpoint, keyed bc_<seqs> (Boost -> Cut seed 1) and cut_<seqs>."""
     out = {}
@@ -374,6 +385,7 @@ CLAIMS += [
      lambda: f"Boost → Cut ≈ {boostcut_flops('flops38b') / 1e9:.1f} GFLOP, {times(boostcut_flops('flops38b') / flops('flops38b', 'backprop'))} backprop"),
     ('Section 8: wall-clock vs backprop', 'about 14× its wall-clock',
      lambda: f"about {mean(field(BC, 'train_seconds')) / mean(field(BP, 'train_seconds')):.0f}× its wall-clock"),
+    ('Section 6: compute of the whole study', None, compute_claim),
     ('Appendix D: test split hash', TEST_SHA, lambda: rescores()['bc38f_s0']['split_token_sha256']['test']),
     ('Section 4.1: head start, Welch', 'Boost → Cut beats Cut alone by 0.049 (95% CI 0.023–0.074, p = 0.007)',
      lambda: (lambda d, ci, t, dof, p: f'Boost → Cut beats Cut alone by {-d:.3f} (95% CI {-ci[1]:.3f}–{-ci[0]:.3f}, '
