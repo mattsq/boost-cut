@@ -577,13 +577,25 @@ def main():
     lines += ['', '## Records: every checkpoint re-scored from its weights alone\n', '| run | status | detail |',
               '|---|---|---|']
     record_rows = record_checks()
-    for entry, (_, run) in ENTRY_LOGS.items():  # each official log is its run's own result
+    for entry, (_, run) in ENTRY_LOGS.items():  # each official log: its run's own result, from a re-scored checkpoint
         try:
             logged, ran = entry_log(entry), result(run)
-            same = all(logged.get(k) == ran.get(k) for k in ('val_loss', 'train_seconds'))
-            record_rows.append((f'entry {entry} = run {run}', 'PASS' if same else 'FAIL',
-                                f'val {logged["val_loss"]:.5f} in {logged["train_seconds"]} s'
-                                + ('' if same else f'; the run has {ran.get("val_loss")} in {ran.get("train_seconds")} s')))
+            problems = [f'the run has {ran.get(k)} for {k}' for k in ('val_loss', 'train_seconds')
+                        if logged.get(k) != ran.get(k)]
+            checked = rescores().get(run)
+            if checked is None or 'final.pt' not in checked.get('sha256', {}):
+                problems.append('its checkpoint is not re-scored')
+            else:
+                for label, value in (('re-scored', checked['rescored'].get('val')),
+                                     ('official scorer', checked.get('official_val'))):
+                    if value is None or abs(value - logged['val_loss']) > 1e-6:
+                        problems.append(f'{label} val {value}')
+            detail = f'val {logged["val_loss"]:.5f} in {logged["train_seconds"]} s'
+            if checked and 'final.pt' in checked.get('sha256', {}):
+                detail += (f'; checkpoint sha256 {checked["sha256"]["final.pt"][:16]}…, re-scored '
+                           f'{checked["rescored"]["val"]:.5f}, official scorer {checked.get("official_val", float("nan")):.5f}')
+            record_rows.append((f'entry {entry} = run {run}', 'FAIL' if problems else 'PASS',
+                                detail + (': ' + '; '.join(problems) if problems else '')))
         except Pending as missing:
             record_rows.append((f'entry {entry} = run {run}', 'PENDING', f'waiting on {missing}'))
     for name, status, detail in record_rows:
@@ -596,7 +608,7 @@ def main():
     agree = lambda rows: sum(r[1] == 'PASS' for r in rows)
     lines.insert(2, f'**{counts["PASS"]} claims pass, {counts["FAIL"]} fail, {counts["PENDING"]} pending; '
                     f'{agree(rescored)} of {len(rescored)} re-scored checkpoints agree with their logs; '
-                    f'{agree(entries)} of {len(entries)} entry logs match their runs.**\n')
+                    f'{agree(entries)} of {len(entries)} entry logs match their runs and re-scored checkpoints.**\n')
     (HERE / 'verification.md').write_text('\n'.join(lines) + '\n')
     print(lines[2])
     sys.exit(1 if counts['FAIL'] or failed_records else 0)

@@ -131,3 +131,7 @@
 21:10:13 start smoke_plain_dust
 21:14:25 end smoke_plain_dust exit=0
 21:14:25 start dust_speedrun_official
+21:45:20 end dust_speedrun_official exit=0
+21:45:20 start ledger_rescore_speedrun
+21:45:47 end ledger_rescore_speedrun exit=0
+21:45:47 start plain_bc38_kall

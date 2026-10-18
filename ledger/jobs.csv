@@ -65,4 +65,6 @@ dust38_s0,queue.log,paper,2026-10-17T19:55:13-07:00,2026-10-17T21:09:07-07:00,8,
 fid_plain,queue.log,paper,2026-10-17T21:09:07-07:00,2026-10-17T21:09:43-07:00,8,0.0100,0.080,ap-QjMHMOeYmZyu13pO5uX6vZ,0.0000,0.000,0.0000
 fid_noise,queue.log,paper,2026-10-17T21:09:43-07:00,2026-10-17T21:10:13-07:00,8,0.0083,0.067,ap-2dgI05BGNzambZ5H81usZk,0.0000,0.000,0.0000
 smoke_plain_dust,queue.log,paper,2026-10-17T21:10:13-07:00,2026-10-17T21:14:25-07:00,8,0.0700,0.560,ap-W9k4J67Tv9GPFS5WC5b7MK,0.0000,0.000,0.0000
-dust_speedrun_official,queue.log,paper,2026-10-17T21:14:25-07:00,,8,,,ap-6oUBDwfSEHJfJWAUlWFxg5,0.0000,0.000,0.0000
+dust_speedrun_official,queue.log,paper,2026-10-17T21:14:25-07:00,2026-10-17T21:45:20-07:00,8,0.5153,4.122,ap-6oUBDwfSEHJfJWAUlWFxg5,0.0000,0.000,0.0000
+ledger_rescore_speedrun,queue.log,paper,2026-10-17T21:45:20-07:00,2026-10-17T21:45:47-07:00,1,0.0075,0.007,ap-68Y8k1EHqUUB5yAvxxJT7O,0.0000,0.000,0.0000
+plain_bc38_kall,queue.log,paper,2026-10-17T21:45:47-07:00,,8,,,ap-OYdtkzbM1KiBsbfilVHrLs,0.0000,0.000,0.0000

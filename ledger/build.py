@@ -52,6 +52,9 @@ CODE_WINDOWS = [
      '6e02c1f075ca04f24196cba14ca0c1c2b0312a556381c8ccec6e71317ba9ac23',
      'byte-identical to submission/val_run_boostcut.py, copied and hashed at 17:16 with the file unchanged since 16:29:52; '
      'the next edit (17:41:48) only added --lr-mult, default 1.0'),
+    ('train/sub_boost/run.py', datetime(2026, 10, 17, 9, 12, 14, tzinfo=PDT), datetime(2100, 1, 1, tzinfo=PDT),
+     'd76005f87bfd92e4a5a3a3e2cc40c0c6daedbf01e71e2faf760ecaafe8554b9d',
+     'the Track 2 entry: unchanged since 09:12:14, before its run, and byte-identical to entries/track2_boost/run.py'),
 ]
 SNAPSHOTS_FROM = datetime(2026, 10, 17, 18, 11, 52, tzinfo=PDT)  # modal_app.py writes provenance/<job>/ from here on
 
