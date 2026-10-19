@@ -93,7 +93,7 @@ Each `metrics.jsonl` record can carry these extra fields:
 | `cgsc.off_{site}` | the sentinels' estimate of the share of credit energy outside the basis |
 | `cgsc.turnover_{site}` | 1 minus the overlap with the previous basis, at each refresh |
 | `cgsc.generation` | how many refreshes have run |
-| `cgsc.update_leakage` | \|(I − P) ΔW\| / \|ΔW\| of the writers' actual steps |
+| `cgsc.update_leakage` | \|(I − P) ΔW\| / \|ΔW\| of the writers' actual steps, P from the bank's current basis (under `qa` modes it is non-zero between a refresh and the next merge, when the adapter still holds the old Q) |
 | `cgsc.cumulative_effective_rank` | the effective rank of each writer's total change since the adapters engaged, at each merge |
 | `profile` | the time split of a synchronized step |
 
