@@ -1,6 +1,6 @@
 # Proposal: Circuit-guided low-rank credit assignment for forward-only pretraining
 
-**Status:** Research proposal, not implemented
+**Status:** Implemented as experimental code ([`noise/train/cgsc/`](../../noise/train/cgsc/README.md)); no GPU experiments run yet, so Gates A–C are open
 **Target:** `spicylemonade/boost-cut`, primarily `noise/train/boostcut/run.py`
 **Date:** 2026-10-19
 **Working name:** Circuit-Guided Subspace Credit (CGSC)
